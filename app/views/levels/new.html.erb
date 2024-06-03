@@ -1,0 +1,7 @@
+<h1>Nouveau niveau</h1>
+<%= simple_form_for [@world, @level] do |f| %>
+  <%= f.input :instruction %>
+  <%= f.input :validation %>
+  <%= f.input :reward %>
+  <%= f.submit "Ajouter le niveau", class: "btn btn-primary" %>
+<% end %>
