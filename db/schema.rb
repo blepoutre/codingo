@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_123702) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_135034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.string "nickname"
+    t.string "personality"
+    t.string "sentence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "skin"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "character_id"
+    t.index ["character_id"], name: "index_collections_on_character_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "instruction"
+    t.integer "validation"
+    t.integer "reward"
+    t.bigint "world_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["world_id"], name: "index_levels_on_world_id"
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.integer "resolution_time"
+    t.date "resolution_date"
+    t.integer "progression"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "level_id"
+    t.index ["level_id"], name: "index_parties_on_level_id"
+    t.index ["user_id"], name: "index_parties_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +62,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_123702) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "balance"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "worlds", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "collections", "characters"
+  add_foreign_key "collections", "users"
+  add_foreign_key "levels", "worlds"
+  add_foreign_key "parties", "levels"
+  add_foreign_key "parties", "users"
 end
