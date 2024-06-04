@@ -1,0 +1,18 @@
+.goldenBtn {
+  background-color: #F1C374;
+  padding: 16px 36px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  position: absolute;
+  top: 38vh;
+  left: calc(50% - 75px);
+  box-shadow: 0 4px 6px rgba(0,0,0, 0.3);
+}
+
+.goldenBtn:hover {
+  background-color: #DAB068;
+}

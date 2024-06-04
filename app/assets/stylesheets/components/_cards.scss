@@ -1,0 +1,26 @@
+#homecardConatiner {
+  height: 500px;
+  width: 80vw;
+}
+.card {
+  margin-top: 2.1rem;
+  background-color: $golden;
+  height: 100%;
+  width: 350px;
+  border-radius: 1.5rem;
+}
+
+.card-body {
+  width: 350px;
+  height: 100%;
+}
+
+.imgBgd {
+  height: 40%;
+  margin: 20px;
+  background-color: $blue-green;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 4px 6px $golden;
+}

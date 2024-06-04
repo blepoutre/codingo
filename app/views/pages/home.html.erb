@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<header id="homeheader">
+  <%= link_to "PLAY !", "#", class: "goldenBtn" %>
+</header>
+<footer id="homefooter">
+  <div class="d-flex container flex-row justify-content-evenly">
+    <div class="card">
+      <div class="imgBgd">
+        <%= cl_image_tag("codingo_images/Rabbit_xyp2na", alt:"Rabbit",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="imgBgd">
+        <%= cl_image_tag("codingo_images/Rati", alt:"Rati",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="imgBgd">
+        <%= cl_image_tag("codingo_images/Ours", alt:"Ours",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+  </div>
+</footer>
