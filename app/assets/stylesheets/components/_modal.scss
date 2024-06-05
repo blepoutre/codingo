@@ -1,0 +1,45 @@
+.modal-body {
+  background-color: #5C9E96;
+}
+
+.modal-content {
+  background-color: #5C9E96;
+  border-color: 2px solid #5C9E96;
+  border-radius: 15px;
+  width: 50vw;
+  height: 80vh;
+  left: calc(50% - 25vw);
+}
+
+.modal-footer {
+  border-top: none!important;
+}
+
+.background {
+  background-image: asset-url("Background.png");
+  background-size: cover;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  border-radius: 15px;
+}
+
+.personnality {
+  background-color: #F1C374;
+  border-radius: 15px;
+  padding: 15px;
+  width: 550px;
+  font-size: 40px;
+}
+
+.choice {
+  background-color: #F1C374;
+  border-radius: 15px;
+  padding: 15px;
+  width: 550px;
+  display: flex;
+  align-items: center;
+}
