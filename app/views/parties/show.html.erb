@@ -1,5 +1,4 @@
-
-
+<body class="background">
 <%# créer le personnage %>
 <%# bouton à destination de l'accueil %>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcharater">
@@ -12,8 +11,33 @@
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
-        <div>
-
+        <div class="personnality">
+        <p><%= "Leo l'intrépide" %></p>
+        <p><%= "Capable de produire un rugissement terrifiant" %></p>
+        <p><%= "Capable de rouler et de combattre pendant de longues périodes sans se fatiguer"%></p>
+        </div>
+        <div class="choice">
+       <div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+    <div class="carousel-item active" class="row justify-content-center">
+    <%= image_tag "Ours.png", width: 500, class: 'd-block mx-auto'%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag "Rabbit.png", width: 500, class: 'd-block mx-auto'%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag "Rati.png", width: 500, class: 'd-block mx-auto'%>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
         </div>
         </div>
       <div class="modal-footer" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -49,3 +73,4 @@
     </div>
   </div>
 </div>
+</body>
