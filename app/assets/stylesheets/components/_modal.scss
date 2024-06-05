@@ -19,6 +19,14 @@
   height: 60vh;
 }
 
+.personnality{
+  background-color: #5C9E96;
+  color: $lightyellow;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 19px!important;
+}
 .character{
   border-radius: 15px;
   background-color: #F1C374;
@@ -38,5 +46,6 @@
 
 .name-character{
   font-family: Darumadrop one;
-  font-size: 40px;
+  font-size: 60px;
+  text-align: center;
 }
