@@ -50,38 +50,29 @@
 // test logo
 #homeLogo{
   width: 100vw;
-  height: 100px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 120px;
+  z-index: 0;
 }
+
 .codingo{
   font-family: "Bangers", system-ui;
+  width: 100vw;
   font-weight: 400;
   font-style: normal;
   font-size: 15rem;
   color: $golden;
-  // background: $golden;
   text-shadow: 10px 10px $red-sand;
   -webkit-background-clip: text;
   background-clip: text;
-  position: relative;
-  z-index: 1;
-  top: 120px;
+  margin-top: 40px;
+  left: 28%;
+  position: absolute;
 }
 
-// .codingo::before{
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: -100%;
-//   width: 200%;
-//   height: 100%;
-//   background: linear-gradient(120deg, transparent 0%, $lightyellow 50%, transparent 100%);
-//   transform: skewX(-20deg);
-//   animation: shine 30s infinite;
-//   z-index: 0;
-// }
 
 @keyframes shine {
   0% {
