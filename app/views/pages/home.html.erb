@@ -38,7 +38,10 @@
       </div>
     </div>
   </div>
-  <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "animated lion on a skate board", crop: :thumb, width: 80, height: 80, id: "lionboard") %>
+  <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "animated lion on a skate board", crop: :thumb, width: 100, height: 100, id: "lionboard") %>
+
+
+  <%= render "shared/modal" %>
   <script>
     function triggerRide() {
       const image = document.getElementById("lionboard");
