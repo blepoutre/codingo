@@ -1,74 +1,57 @@
-<body class="background">
+<body class="background" style="100 vh">
 <%# créer le personnage %>
 <%# bouton à destination de l'accueil %>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcharater">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcharacter">
   Play now !
 </button>
 <%# fin bouton à destination de l'accueil %>
 
 <!-- Modal -->
-<div class="modal fade" id="createcharater" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-body">
-        <div class="personnality">
-        <p><%= "Leo l'intrépide" %></p>
-        <p><%= "Capable de produire un rugissement terrifiant" %></p>
-        <p><%= "Capable de rouler et de combattre pendant de longues périodes sans se fatiguer"%></p>
+
+      <div class="modal-body body-character">
+        <div class="character-info">
+        <h1 class="name-character">Leo l'intrépide</h1>
+        <div>
+        <p> Capable de produire un rugissement terrifiant</p>
         </div>
-        <div class="choice">
-       <div id="carouselExampleFade" class="carousel slide carousel-fade">
-  <div class="carousel-inner">
-    <div class="carousel-item active" class="row justify-content-center">
-    <%= image_tag "Ours.png", width: 500, class: 'd-block mx-auto'%>
-    </div>
-    <div class="carousel-item">
-    <%= image_tag "Rabbit.png", width: 500, class: 'd-block mx-auto'%>
-    </div>
-    <div class="carousel-item">
-    <%= image_tag "Rati.png", width: 500, class: 'd-block mx-auto'%>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+        <div>
+        <p> Capable de rouler et de combattre pendant de longues périodes sans se fatiguer</p>
         </div>
         </div>
-      <div class="modal-footer" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Valider</button>
+        <div class="character">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <div class="carousel-item active" class="row justify-content-center">
+                <%= image_tag "Ours.png", height:300, class: 'd-block mx-auto' %>
+                </div>
+                <div class="carousel-item">
+                <%= image_tag "Rabbit.png", height:300, class: 'd-block mx-auto' %>
+                </div>
+                <div class="carousel-item">
+                <%= image_tag "Rati.png", height:300, class: 'd-block mx-auto' %>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+
+
+
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<%# #Fin de modal création %>
-
-
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="fix-footer">
+        <button type="button" class="modalBtn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="modalBtn">Save changes</button>
       </div>
     </div>
   </div>
