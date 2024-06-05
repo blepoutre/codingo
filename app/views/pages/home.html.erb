@@ -9,7 +9,10 @@
     <%= cl_image_tag("codingo_images/Rabbit_xyp2na", alt:"Rabbit",crop: :thumb,width:800, height:600, object_fit:"contain", id: "leftPilar") %>
     <%= cl_image_tag("codingo_images/Ours", alt:"Ours",crop: :thumb,width:800, height:600, object_fit:"contain", id: "rightPilar") %>
   </div>
-  <%= link_to "PLAY NOW!", "#", class: "goldenBtn homeBtn" %>
+  <!-- Button trigger modal -->
+  <button type="button" class="goldenBtn homeBtn" data-bs-toggle="modal" data-bs-target="#playModal">
+    PLAY NOW!
+  </button>
 </header>
 <footer id="homefooter">
   <div class="d-flex container flex-row justify-content-evenly">
