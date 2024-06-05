@@ -1,5 +1,15 @@
 <header id="homeheader">
-  <%= link_to "PLAY !", "#", class: "goldenBtn" %>
+  <div id="homeTitle">
+    <h2>Apprendre à coder en s'amusant !</h2>
+  </div>
+  <div id="homeLogo">
+    <h1 class="codingo">CODINGO</h1>
+  </div>
+  <div class="homeBanner">
+    <%= cl_image_tag("codingo_images/Rabbit_xyp2na", alt:"Rabbit",crop: :thumb,width:800, height:600, object_fit:"contain", id: "leftPilar") %>
+    <%= cl_image_tag("codingo_images/Ours", alt:"Ours",crop: :thumb,width:800, height:600, object_fit:"contain", id: "rightPilar") %>
+  </div>
+  <%= link_to "PLAY NOW!", "#", class: "goldenBtn homeBtn" %>
 </header>
 <footer id="homefooter">
   <div class="d-flex container flex-row justify-content-evenly">
@@ -28,4 +38,25 @@
       </div>
     </div>
   </div>
+  <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "animated lion on a skate board", crop: :thumb, width: 80, height: 80, id: "lionboard") %>
+  <script>
+    function triggerRide() {
+      const image = document.getElementById("lionboard");
+      image.classList.add("animated");
+      if (image) {
+        setTimeout(() => {
+          image.classList.remove("animated");
+        }, 20000);
+      }
+    }
+
+    function startAnimation() {
+      setInterval(triggerRide, 30000);
+      triggerRide();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      startAnimation();
+    });
+  </script>
 </footer>

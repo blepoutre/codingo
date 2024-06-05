@@ -4,6 +4,14 @@
   max-height: 66px;
 }
 
+.nav-link{
+  color: $lightyellow;
+}
+
+.nav-link:hover{
+  color: $golden;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
