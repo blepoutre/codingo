@@ -1,0 +1,36 @@
+.modal-content{
+  border-radius: 1.2rem;
+  background: $blue-green;
+  border: solid $blue-green 15px;
+  color: $blue-green;
+  width: 50vw;
+  height: 80vh;
+  position: relative;
+  left: calc(50% - 25vw);
+  bottom: -10vh;
+}
+
+.modal-body{
+  background: $lightyellow;
+  border-radius: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-footer{
+  border-top: none !important;
+  bottom: 5vh;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.modal-avatar{
+  position: absolute;
+  left: -300px;
+  z-index: 5;
+}
