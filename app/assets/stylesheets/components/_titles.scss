@@ -1,9 +1,18 @@
 #homeTitle{
-  color: $lightyellow;
   position: absolute;
-  white-space: nowrap;
-  width: 600px;
+  width: 100vw;
   height: 48px;
-  left: calc(50% - 250px);
-  top: 80px;
+  top: 0;
+  white-space: nowrap;
+
+  & h2{
+  color: $lightyellow;
+  // // Nanum Pen
+  // font-family: "Nanum Pen Script", cursive;
+  // Darumadrop One
+  font-family: "Darumadrop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  }
 }
