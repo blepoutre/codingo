@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 300, id: "modal-avatar") %>
+        <h1>Félicitations</h1>
+        <h2>(boucle if en fonction du résultat)</h2>
+        <div class="rating">
+          <div class="d-flex flex-row justify-content-evenly animated-star">
+            <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="retryBtn" type="button" class="modalBtn" data-bs-dismiss="modal">Réessayer</button>
+          <button id="nxtBtn" type="button" class="modalBtn">Niveau X <i class="fa-solid fa-play ms-3"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
