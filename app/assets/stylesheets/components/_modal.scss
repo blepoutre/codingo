@@ -3,13 +3,13 @@
   background-size: cover;
 }
 
+// Create character
+// character - create character
 .body-character {
  background-color: #5C9E96!important;
  flex-direction: row !important;
  gap: 20px;
 }
-
-/* new modal */
 
 .character-info{
   border-radius: 15px;
@@ -19,6 +19,20 @@
   height: 60vh;
 }
 
+.character{
+  border-radius: 15px;
+  background-color: #F1C374;
+  width:50%;
+  height: 60vh;
+}
+
+.name-character{
+  font-family: Darumadrop one;
+  font-size: 60px;
+  text-align: center;
+}
+
+// personnality - create character
 .personnality{
   background-color: #5C9E96;
   color: $lightyellow;
@@ -27,16 +41,10 @@
   padding: 10px;
   font-size: 19px!important;
 }
-.character{
-  border-radius: 15px;
-  background-color: #F1C374;
-  width:50%;
-  height: 60vh;
-}
 
-
+// Footer - create character
 .fix-footer{
-  bottom: -8vh !important;
+  bottom: 1vh !important;
   position: absolute!important;
   display: flex!important;
   width: 100%!important;
@@ -44,8 +52,29 @@
   gap: 8rem!important;
 }
 
-.name-character{
-  font-family: Darumadrop one;
-  font-size: 60px;
-  text-align: center;
+// button - create character
+.my-button {
+  background-color: #F1C374;
+  color: #5C9E96;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  width: 150px;
+  font-size: 16px;
+}
+
+.my-button:hover {
+  background-color: $golden-darker;
+  color: #5C9E96;
+  font-weight: bold;
+}
+// fin de create character
+
+#font-one {
+  font-family: Shantell sans;
+}
+
+#font-two {
+  font-family: Darumdrop one;
+  bottom: 3vh !important;
 }
