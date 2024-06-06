@@ -5,14 +5,14 @@
 
 <!-- Modal -->
 <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="playmodal-content">
       <div class="playmodal-body">
         <div class="d-flex flex-column align-middle justify-content-center">
           <h1>Félicitations</h1>
-          <div>
+          <p>
             <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
-          </div>
+          </p>
         <h2>Voici tes prouesses :<br>Temps de jeu : {chrono}<br> Tes gains : {monnaie du jeu} </h2>
         </div>
         <div class="playmodal-footer">
@@ -21,7 +21,7 @@
           <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
         </div>
       </div>
+      <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %>
     </div>
   </div>
-  <%# <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %> %>
 </div>
