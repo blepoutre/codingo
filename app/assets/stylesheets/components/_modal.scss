@@ -1,45 +1,82 @@
-.modal-body {
-  background-color: #5C9E96;
-}
-
-.modal-content {
-  background-color: #5C9E96;
-  border-color: 2px solid #5C9E96;
-  border-radius: 15px;
-  width: 50vw;
-  height: 80vh;
-  left: calc(50% - 25vw);
-}
-
-.modal-footer {
-  border-top: none!important;
-}
-
 .background {
   background-image: asset-url("Background.png");
   background-size: cover;
 }
 
-.modal-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  border-radius: 15px;
+// Create character
+// character - create character
+.body-character {
+ background-color: #5C9E96!important;
+ flex-direction: row !important;
+ gap: 20px;
 }
 
-.personnality {
-  background-color: #F1C374;
+.character-info{
   border-radius: 15px;
-  padding: 15px;
-  width: 550px;
-  font-size: 40px;
+  background-color: #F1C374;
+  width:50%;
+  margin: 15px;
+  height: 60vh;
 }
 
-.choice {
-  background-color: #F1C374;
+.character{
   border-radius: 15px;
-  padding: 15px;
-  width: 550px;
-  display: flex;
-  align-items: center;
+  background-color: #F1C374;
+  width:50%;
+  height: 60vh;
+}
+
+.name-character{
+  font-family: Darumadrop one;
+  font-size: 60px;
+  text-align: center;
+}
+
+// personnality - create character
+.personnality{
+  background-color: #5C9E96;
+  color: $lightyellow;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 19px!important;
+}
+
+// Footer - create character
+.fix-footer{
+  bottom: 1vh !important;
+  position: absolute!important;
+  display: flex!important;
+  width: 100%!important;
+  justify-content: center!important;
+  gap: 8rem!important;
+}
+
+// button - create character
+.my-button {
+  background-color: #F1C374;
+  color: #5C9E96;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  width: 150px;
+  font-size: 16px;
+}
+
+.my-button:hover {
+  background-color: $golden-darker;
+  color: #5C9E96;
+  font-weight: bold;
+}
+// fin de create character
+
+// modal confirmation de character
+#font-one {
+  font-family: Nanum Pen;
+}
+
+#font-two {
+  font-family: Darumadrop one;
+  bottom: 3vh !important;
+  font-size: 50px;
 }

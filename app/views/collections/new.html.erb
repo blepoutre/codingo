@@ -1,0 +1,78 @@
+<body class="background" style="100 vh">
+<%# créer le personnage %>
+<%# bouton à destination de l'accueil %>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcharacter">
+  Play now !
+</button>
+<%# fin bouton à destination de l'accueil %>
+
+<!-- Modal création du personnage-->
+<div class="modal fade" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body body-character">
+        <div class="character-info">
+        <h1 class="name-character">Leo l'intrépide</h1>
+        <div class="personnality">
+        <p> <i class="fa-solid fa-square-check"></i> Capable de produire un rugissement terrifiant</p>
+        <p> <i class="fa-solid fa-square-check"></i> Capable de rouler et de combattre pendant de longues périodes sans se fatiguer</p>
+        </div>
+        </div>
+        <div class="character">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <div class="carousel-item active" class="row justify-content-center">
+                <%= image_tag "Ours.png", height:450, class: 'd-block mx-auto' %>
+                </div>
+                <div class="carousel-item">
+                <%= image_tag "Rabbit.png", height:450, class: 'd-block mx-auto' %>
+                </div>
+                <div class="carousel-item">
+                <%= image_tag "Rati.png", height:450, class: 'd-block mx-auto' %>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+
+
+        </div>
+      <div class="fix-footer">
+      <button type="button" class="btn btn-primary my-button" data-bs-toggle="modal" data-bs-target="#confirmationModal">Valider</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<!-- Modal confirmation du personnage-->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%# <div class="modal-header">
+        <h1 class="modal-title fs-5" id="confirmationModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> %>
+      <div class="modal-body">
+      <h1 id="font-one">Bravo! tu as choisi</h1>
+        <div class="row justify-content-center">
+                <%= image_tag "Ours1.png", height:230, class: 'd-block mx-auto' %>
+                </div>
+      <h2 id="font-two">Leo l'intrépide</h2>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
