@@ -8,8 +8,8 @@
 
 <!-- Modal création du personnage-->
 <div class="modal fade" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog modal-ku">
+    <div class="modal-content content-character">
 
       <div class="modal-body body-character">
         <div class="character-info">
@@ -56,19 +56,19 @@
 
 <!-- Modal confirmation du personnage-->
 <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog modal-ku">
+    <div class="modal-content content-character">
       <%# <div class="modal-header">
         <h1 class="modal-title fs-5" id="confirmationModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div> %>
-      <div class="modal-body">
+       %>
+      <div class="modal-body body-confirm">
       <h1 id="font-one">Bravo! tu as choisi</h1>
         <div class="row justify-content-center">
                 <%= image_tag "Ours1.png", height:230, class: 'd-block mx-auto' %>
                 </div>
       <h2 id="font-two">Leo l'intrépide</h2>
-      <div class="modal-footer">
+      <div class="modal-footer fix-footer-confirm">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
@@ -76,3 +76,4 @@
   </div>
 </div>
 </body>
+</div>
