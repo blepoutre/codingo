@@ -4,18 +4,18 @@
   </button> %>
 
 <!-- Modal -->
-<div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModalLabel" aria-hidden="true">
+<div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h1>Félicitations</h1>
-        <h2>(boucle if en fonction du résultat)<br>Time score</h2>
-        <div class="rating">
-          <div class="d-flex flex-row justify-content-evenly animated-star">
-            <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+    <div class="playmodal-content">
+      <div class="playmodal-body">
+        <div class="d-flex flex-column align-middle justify-content-center">
+          <h1>Félicitations</h1>
+          <div>
+            <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
           </div>
+        <h2>Voici tes prouesses :<br>Temps de jeu : {chrono}<br> Tes gains : {monnaie du jeu} </h2>
         </div>
-        <div class="modal-footer">
+        <div class="playmodal-footer">
           <%= link_to "Réessayer", root_path, class:"modalBtn", id: "retryBtn" %>
           <%= link_to '`Niveau #{newlevel.id}`', "#", class:"modalBtn", id: "nxtBtn" %>
           <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
@@ -23,5 +23,5 @@
       </div>
     </div>
   </div>
-  <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 800, height: 800, id: "modal-avatar") %>
+  <%# <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %> %>
 </div>

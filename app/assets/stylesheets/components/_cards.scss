@@ -1,36 +1,7 @@
-#homecardConatiner {
-  height: 500px;
-  width: 80vw;
-}
-
-#homebanner{
-  display: flex;
-  align-items: center;
-  max-height: 50vh;
-}
-
-#leftPilar{
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  filter: drop-shadow(0 0 5px #E56D72);
-}
-
-#rightPilar{
-  position: absolute;
-  top:10%;
-  right: -10%;
-  filter: drop-shadow(0 0 5px #5483BF);
-}
-
-#leftPilar, #rightPilar{
-  z-index: 2;
-}
-
 .card {
-  margin-top: 2.1rem;
+  margin-top: 40px;
   background-color: $golden;
-  height: 100%;
+  height: 400px;
   width: 350px;
   border-radius: 1.5rem;
   border: solid 0.5px $golden;
