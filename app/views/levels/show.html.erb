@@ -1,12 +1,29 @@
-<div class="container">
-  <iframe src="<%= @level.url %>" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<body style="background-color: #F6F3C8">
 
-  <label for="answer">Que vois-tu s'afficher</label>
-    <select name="réponse" id="answer">
-      <option value="">Choisis la bonne réponse</option>
-      <option value="dog">18</option>
-      <option value="cat">4554</option>
-      <option value="hamster">21</option>
-      <option value="parrot">100</option>
-    </select>
-</div>
+  <div class="container">
+
+    <!-- Modal -->
+    <%= render "theory"%>
+
+    <!-- Exo & IDE -->
+      <div class="mt-5">
+      <iframe src="<%= @level.url %>" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+
+    <!-- Answer -->
+      <fieldset data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
+          <%= render "success"%>
+          <%= render "fail"%>
+        <legend>Qu'est-il afficher sur le terminal ?</legend>
+        <% @level.answers.each do |answer| %>
+          <div data-answer-target="<%=@reponse[@counter]%>">
+            <input type="radio" id="scales" name="scales"/>
+            <label for="scales"><%= answer %></label>
+          </div>
+          <% @counter += 1 %>
+        <% end %>
+        <button type="submit" class="modalBtn mt-2" data-action="click->answer#check">Répondre !</button>
+      </fieldset>
+
+  </div>
+</body>
