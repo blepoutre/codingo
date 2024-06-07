@@ -20,3 +20,47 @@
   display: flex;
   justify-content: center;
 }
+
+// classement - index
+.card-classement {
+  padding: 40px;
+  background-color: $blue-green;
+  width: 50%;
+  border-radius: 1.5rem;
+
+}
+
+.inside-card {
+  background-color: $golden;
+  padding: 20px;
+  border-radius: 1.5rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
+.button-classement {
+    color: $golden!important;
+    border-radius: 50px!important;
+    background: $blue-green!important;
+  }
+
+  .button-classement:hover {
+    background: #2b4e49!important;
+    color: $golden!important;
+  }
