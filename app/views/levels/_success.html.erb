@@ -1,13 +1,11 @@
 <div class="modal fade" id="TheoryModal" tabindex="-1" role="dialog" aria-labelledby="TheoryModalLabel" aria-hidden="true" data-answer-target="win">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h5 class="modal-title" id="TheoryModalLabel">Gagné</h5>
-        <p>Beau gosse</p>
-      </div>
-      <div class="modal-footer">
-        <%= link_to "Fermer", party_path(params[:party_id]), class:"modalBtn" %>
-      </div>
+    <div class="modal-content" style="background: #F6F3C8; border: 10px solid #DA785B; height: 700px;">
+        <h5 class="modal-title text-center" id="TheoryModalLabel">Gagné</h5>
+          <div class="modal-body m-5">
+            <p>Beau gosse</p>
+          </div>
+            <%= link_to "Retour sur la carte", party_path(params[:party_id]), class:"modalBtn" %>
     </div>
   </div>
 </div>
