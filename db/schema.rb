@@ -81,8 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_130837) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "level_id"
-    t.integer "number_error"
     t.boolean "win", default: false
+    t.integer "number_error"
     t.index ["level_id"], name: "index_parties_on_level_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
