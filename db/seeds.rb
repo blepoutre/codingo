@@ -8,13 +8,20 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Level.destroy_all
+World.destroy_all
+
+puts "--------------------------------world------------------------------------"
+world = World.new(
+  name: "first"
+)
+world.save!
 
 puts "--------------------------------level 1------------------------------------"
 
 level1 = Level.new(
   validation: 18,
   reward: 10,
-  world_id: 1,
+  world: World.first,
   answers: ["21", "34", "67", "100", "18"],
   url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
   number: 1
@@ -26,7 +33,7 @@ puts "--------------------------------level 2-----------------------------------
 level2 = Level.new(
   validation: 18,
   reward: 15,
-  world_id: 1,
+  world: World.first,
   answers: ["21", "34", "67", "100", "18"],
   url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
   number: 2
@@ -38,7 +45,7 @@ puts "--------------------------------level 3-----------------------------------
 level3 = Level.new(
   validation: 18,
   reward: 20,
-  world_id: 1,
+  world: World.first,
   answers: ["21", "34", "67", "100", "18"],
   url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
   number: 3
@@ -50,7 +57,7 @@ puts "--------------------------------level 4-----------------------------------
 level4 = Level.new(
   validation: 18,
   reward: 30,
-  world_id: 1,
+  world: World.first,
   answers: ["21", "34", "67", "100", "18"],
   url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
   number: 4
