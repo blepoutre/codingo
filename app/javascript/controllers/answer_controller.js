@@ -1,8 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
+let counter = 3;
+
 // Connects to data-controller="answer"
 export default class extends Controller {
-  static targets=["reponse1", "reponse2", "reponse3", "reponse4", "reponse5", "win", "loose"];
+  static targets=["reponse1", "reponse2", "reponse3", "reponse4", "reponse5", "win", "loose", "compteur"];
 
   static values={
     validation: Number
@@ -31,11 +33,19 @@ export default class extends Controller {
 
   result(userAnswer){
     if (parseInt(userAnswer) === this.validationValue){
-        this.winTarget.classList.add("show");
-        this.winTarget.classList.add("d-block");
-    } else{
-        this.looseTarget.classList.add("show");
-        this.looseTarget.classList.add("d-block");
-    };
+      this.winTarget.classList.add("show");
+      this.winTarget.classList.add("d-block");
+      } else {
+        counter -= 1;
+        if (counter === 0){
+          this.looseTarget.classList.add("show");
+          this.looseTarget.classList.add("d-block");
+          }
+          };
+    if (counter === 1){
+      this.compteurTarget.innerText = `Nombre de tentative restante : ${counter}`;
+    } else {
+      this.compteurTarget.innerText = `Nombre de tentatives restantes : ${counter}`;
+    }
   }
 }
