@@ -39,6 +39,22 @@ $modal-btn-min-height: 40px;
   }
 }
 
+.green {
+  background-color: $blue-green;
+  width: fit-content;
+  height: fit-content;
+  &:hover {
+    background-color: $blue-green-darker;
+  }
+}
+
+#partiesBtn {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
 .modalBtn, .goldenBtn {
   padding: 10px 24px;
   min-width: fit-content;
