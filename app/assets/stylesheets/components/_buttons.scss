@@ -18,11 +18,11 @@ $modal-btn-min-height: 40px;
 }
 
 .goldenBtn:hover {
-  background-color: #DAB068;
+  background-color: $golden-darker;
 }
 
 .modalBtn{
-  background-color: #F1C374;
+  background-color: $golden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,13 +32,32 @@ $modal-btn-min-height: 40px;
   color: white;
   text-transform: uppercase;
   border: none;
+  // Attention: la modale choisit désactive les pointer-events avec une propriété
+  //            pointer-events: none;
+  pointer-events: auto;
 
   &:hover{
-    background-color: #DAB068;
-    color:white;
+    background-color: $golden-darker !important;
+    color:white !important;
   }
 }
 
+.green {
+  background-color: $blue-green;
+  width: fit-content;
+  height: fit-content;
+  &:hover {
+    background-color: $blue-green-darker;
+  }
+}
+
+#partiesBtn {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
 .modalBtn, .goldenBtn {
   padding: 10px 24px;
   min-width: fit-content;
