@@ -1,19 +1,64 @@
+.background-2 {
+  background-image: asset-url("Background2.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.drapeau-1{
+  grid-area: 2 / 2 / 2 / 2;
+  margin-top: -89px;
+  padding-left: 25px;
+}
+
+.drapeau-2{
+  grid-area: 7 / 4 / 4 / 5;
+  margin-top: -76px;
+  padding-left: 142px;
+}
+
+.drapeau-3{
+  grid-area: 7 / 6 / 3 / 7;
+  margin-top: 45px;
+  padding-left: 16px;
+}
+
+.drapeau-4{
+  grid-area: 2 / 10 / 3 / 10;
+  margin-top: -89px;
+  padding-left: 70px;
+}
+
 .drapeau-position-1 {
-  transform: translate(250%, 45%);
+  left: 20%;
+  background-position-x: 45%;
 }
 
 .drapeau-position-2 {
-  transform: translate(310px, 200px);
+  left: 20%;
+  background-position-x: 45%;
 }
 
 .drapeau-position-3 {
-  transform: translate(520px, 210px);
+  left: 20%;
+  background-position-x: 45%;
 }
 
 .drapeau-position-4 {
-  transform: translate(760px, 10px);
+  left: 20%;
+  background-position-x: 45%;
 }
 
-.flag-div {
-  width: 100%
+
+.rampe {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  object-fit: cover;
+  width: 100%;
+  // grid-template-columns: repeat(13, 1fr);
+  // grid-template-rows: repeat(8, 1fr);
+}
+
+.rampe-image {
+  grid-area: 2 / 2 / 6 / 12;
 }
