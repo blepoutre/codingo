@@ -1,26 +1,30 @@
-<body style="background-color: #F6F3C8">
 
-    <!-- Modal -->
+<div style="background-image: url('https://res.cloudinary.com/djp2y2hvl/image/upload/v1717751247/codingo_images/Background_lbnvro.png'); object-content: fit-content; height: 100vh; ;">
+ <div class="container">
     <%= render "theory"%>
 
+  <!-- Modal -->
+
+    <div class="container">
     <!-- Exo & IDE -->
       <div class="mt-5">
-      <iframe src="<%= @level.url %>" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <iframe src="<%= @level.url %>" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
       </div>
 
     <!-- Answer -->
-      <fieldset data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
+      <fieldset id="fieldset" data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
           <%= render "success"%>
           <%= render "fail"%>
-        <legend>Qu'est-il afficher sur le terminal ?</legend>
-        <% @level.answers.each do |answer| %>
-          <div data-answer-target="<%=@reponse[@counter]%>">
-            <input type="radio" id="scales" name="scales"/>
-            <label for="scales"><%= answer %></label>
+        <legend class="mb-2">Qu'est-il afficher sur le terminal ?</legend>
+        <% @level.answers.each_with_index do |answer, index| %>
+          <div class="answer-wrapper" data-answer-target="<%=@reponse[@counter]%>">
+              <input class="answer-input" type="radio" id="scales_<%= index %>" name="scales"/>
+              <label for="scales_<%= index %>" class="answer-label"><%= answer %></label>
           </div>
-          <% @counter += 1 %>
+        <% @counter += 1 %>
         <% end %>
-        <button type="submit" class="modalBtn mt-2" data-action="click->answer#check">Répondre !</button>
-        <h4 data-answer-target = "compteur">Nombre de tentatives restantes : 3</h4>
+        <button id="answer-response" type="submit" class="modalBtn mt-2 green" data-action="click->answer#check">Répondre !</button>
+        <h4>Nombre de tentative(s) restante(s) : <span id="counter" data-answer-target = "compteur">3</span></h4>
       </fieldset>
-</body>
+    </div>
+</div>

@@ -1,13 +1,10 @@
 <body class="background" style="height: 100 vh">
 <%# créer le personnage %>
 <%# bouton à destination de l'accueil %>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcharacter">
-  Play now !
-</button>
 <%# fin bouton à destination de l'accueil %>
 
 <!-- Modal création du personnage-->
-<div class="modal fade" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade show d-block mt-5" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-ku">
     <div class="modal-content content-character">
 
@@ -42,38 +39,12 @@
               </button>
             </div>
         </div>
-
-
         </div>
       <div class="fix-footer">
-      <button type="button" class="btn btn-primary my-button" data-bs-toggle="modal" data-bs-target="#confirmationModal">Valider</button>
+       <%= link_to "Valider", new_party_path, class:"btn btn-primary my-button" %>
       </div>
     </div>
     </div>
   </div>
 </div>
 </body>
-
-<!-- Modal confirmation du personnage-->
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-ku">
-    <div class="modal-content content-character">
-      <%# <div class="modal-header">
-        <h1 class="modal-title fs-5" id="confirmationModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       %>
-      <div class="modal-body body-confirm">
-      <h1 id="font-one">Bravo! tu as choisi</h1>
-        <div class="row justify-content-center">
-                <%= image_tag "Ours1.png", height:230, class: 'd-block mx-auto' %>
-                </div>
-      <h2 id="font-two">Leo l'intrépide</h2>
-      <div class="modal-footer fix-footer-confirm">
-        <button type="button" class="btn btn-secondary button-new" data-bs-dismiss="modal"><i class="fa-solid fa-pencil"></i> Modifier</button>
-        <button type="button" class="btn btn-primary button-new">Play now</button>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-</div>

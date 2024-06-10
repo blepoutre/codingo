@@ -1,1 +1,107 @@
 // Création d'une page de style dédiée au formulaire des exercices
+.toleft {
+  left: -100px;
+}
+
+//overlay of Trinket
+// #overlay {
+//   position: absolute;
+//   width: 78.6%;
+//   height: 500px;
+//   border-top: inset 3.5vh $red-sand;
+//   z-index: 71;
+// }
+
+// .overlay {
+//   position: absolute;
+//   width: 78.6%;
+//   height: 500px;
+//   border-left: solid 10px $red-sand;
+//   border-right: solid 10px $red-sand;
+//   border-bottom: solid 10px $red-sand;
+//   z-index: 72;
+// }
+
+#counter {
+  width: 150px;
+  height: fit-content;
+  padding: 2px 36px;
+  margin-left: 1rem;
+  border: solid $red-sand 5px;
+  border-radius: 50vh;
+  box-shadow: 0 0 3px 1px $brown;
+}
+
+#fieldset {
+  position: relative;
+  background-color: $lightyellow;
+  left: calc(50% - 26.5vw);
+  width: 53vw;
+  height: 250px;
+  border: solid $red-sand 5px;
+  padding: 20px;
+  margin: 50px 25px;
+  border-radius: 1.2rem;
+  box-shadow: inset 0 0 3px 2px $brown;
+}
+
+#fieldset h4 {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+
+#answer-response {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 15px;
+}
+
+.answer-wrapper {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input[type="radio"] { /* Masque le bouton radio */
+  display: none;
+}
+
+.answer-label {
+  position: relative; /* Ajoute une position relative pour le pseudo-élément ::before */
+  cursor: pointer;
+  margin: 30px 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: $lightyellow;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.answer-label::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 60px;
+  background-color: $red-sand;
+  border-radius: 50vh;
+  z-index: -1;
+  transition: box-shadow .7s ease-out, background .3s ease-in;
+}
+
+.answer-label:hover::before {
+  border: solid 3px $blue-green;
+}
+
+input:checked + .answer-label::before {
+  box-shadow: inset 0px 3px 0px 2px $blue-green-darker;
+  background-color: $blue-green;
+  z-index: -1;
+}
