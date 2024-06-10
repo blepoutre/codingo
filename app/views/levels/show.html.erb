@@ -1,11 +1,11 @@
 <div style="background-image: url('https://res.cloudinary.com/djp2y2hvl/image/upload/v1717751247/codingo_images/Background_lbnvro.png'); background-size: fill; height: 100vh; ;">
-    <%#= render "theory"%>
+    <%= render "theory"%>
 
   <!-- Modal -->
 
-    <div class="container toleft">
+    <div class="container">
     <!-- Exo & IDE -->
-      <div id="overlay"></div>
+      <div id="overlay" class="overlay"></div>
       <div class="mt-5">
         <iframe src="<%= @level.url %>" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
       </div>
