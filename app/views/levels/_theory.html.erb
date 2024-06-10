@@ -4,9 +4,9 @@
         <h5 class="modal-title text-center" id="TheoryModalLabel">Félicitations</h5>
           <div class="modal-body m-5">
             <p>Tu peux faire des opérations simple .....</p> %>
-<body class="modal-open" style="overflow: hidden; padding-right: 19px;">
+
 <%# --Modal %>
- <div class="modal fade show" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-modal="true" role="dialog" style="display: block;">
+ <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-modal="true" role="dialog" style="display: block;">
   <div class="modal-dialog modal-lg">
     <div class="playmodal-content-negative">
       <div class="playmodal-body-negative">
@@ -19,7 +19,7 @@
            </p>
           <h2>Voici tes prouesses : You are traaash !!!<br>Tes gains : {monnaie du jeu}<br> Monde 1 terminé </h2>
             <div class="playmodal-footer">
-              <a class="modalBtn" id="retryBtn" href="/">Réessayer</a>
+              <%=link_to "Réesayer", level_path(@level), class:"modalBtn", id:"retryBtn"%>
               <a class="modalBtn" id="nxtBtn" href="#">`Monde 2 #{new_world.id}`
               <i class="fa-solid fa-play"></i></a>
               <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
@@ -30,4 +30,3 @@
     </div>
   </div>
  </div>
-</body>
