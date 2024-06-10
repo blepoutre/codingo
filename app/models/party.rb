@@ -1,4 +1,4 @@
 class Party < ApplicationRecord
   belongs_to :user
-  belongs_to :level
+  has_many :user_levelings
 end

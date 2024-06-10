@@ -9,6 +9,17 @@
 #   end
 Level.destroy_all
 World.destroy_all
+User.destroy_all
+Party.destroy_all
+
+puts "--------------------------------User------------------------------------"
+user = User.new(
+  email: "mathys@gmail.com",
+  password: "password",
+  name: "Mathys",
+  balance: 0
+)
+user.save!
 
 puts "--------------------------------world------------------------------------"
 world = World.new(

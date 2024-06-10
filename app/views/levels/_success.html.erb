@@ -1,11 +1,20 @@
-<div class="modal fade" id="TheoryModal" tabindex="-1" role="dialog" aria-labelledby="TheoryModalLabel" aria-hidden="true" data-answer-target="win">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background: #F6F3C8; border: 10px solid #DA785B; height: 700px;">
-        <h5 class="modal-title text-center" id="TheoryModalLabel">Gagné</h5>
-          <div class="modal-body m-5">
-            <p>Beau gosse</p>
-          </div>
-            <%# <%= link_to "Retour sur la carte", party_path(params[:party_id]), class:"modalBtn" %> %>
+<div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-hidden="true" data-answer-target="win">
+  <div class="modal-dialog modal-lg">
+    <div class="playmodal-content">
+      <div class="playmodal-body">
+        <div class="d-flex flex-column align-middle justify-content-center">
+          <h1>Félicitations</h1>
+          <p>
+            <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
+          </p>
+        <h2>Voici tes prouesses :<br>Temps de jeu : {chrono}<br> Tes gains : {monnaie du jeu} </h2>
+        </div>
+        <div class="playmodal-footer">
+          <%= link_to 'Retour à la carte', "#", class:"modalBtn", id: "nxtBtn" %>
+          <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
+        </div>
+      </div>
+    <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %>
     </div>
   </div>
 </div>
