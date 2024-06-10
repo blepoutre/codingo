@@ -10,6 +10,7 @@ export default class extends Controller {
     validation: Number
   };
 
+
   check() {
     switch(true) {
       case (this.reponse1Target.firstChild.nextSibling.checked):
