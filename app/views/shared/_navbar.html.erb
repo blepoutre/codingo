@@ -13,19 +13,23 @@
             <a class="nav-link" href="/">Accueil</a>
           </li>
           <li>
+            <% if current_user.nil? %>
+            <% else %>
             <a class="nav-link" href="/collections">Mon espace</a>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
+            <i class="avatar dropdown-toggle codlogo" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">G</i>
               <% if current_user.nil? %>
+              <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Connexion", new_user_session_path, class:"customhover dropdown-item"%>
               <% else %>
             <!-- Ajout d'une icone temporaire à la place de Sébastien en attendant un autre avatar -->
-            <i class="avatar dropdown-toggle codlogo" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">G</i>
             <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ayubna" /> %>
             <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Ma collection", collections_path, class:"customhover dropdown-item"%>
               <%= link_to "Mes meilleurs temps", parties_path, class:"customhover dropdown-item"%>
-              <%= link_to "Déconnexion", destroy_user_session_path, class:"customhover dropdown-item"%>
+              <%= link_to "Déconnexion", destroy_user_session_path, data: { "turbo-method": :delete }, class:"customhover dropdown-item"%>
               <% end %>
             </div>
           </li>
