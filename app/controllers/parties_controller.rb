@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
+    @user_levels = current_user.user_levelings
   end
 
   def new
@@ -11,19 +12,32 @@ class PartiesController < ApplicationController
     @party = Party.new
     @user = current_user
     @party.user = @user
-    @level = Level.find_by(number: 1)
+    @levels = Level.all
     @party.save
+    @levels.each do |level|
+      @user_level = UserLeveling.create(
+        level: level,
+        party: @party,
+        done: false,
+        reward: 0
+      )
+    end
+    redirect_to party_path(@party)
+  end
 
-    @user_party = UserLeveling.new
-    @user_party.level_id = @level.id
-    @user_party.party_id = @party.id
-    @user_party.done = true
-    @user_party.reward = 0
-
-    if @user_party.save
-      redirect_to party_path(@party)
-    else
-      render :new, status: :unprocessable_entity
+  def finish_level
+    @stars = params["tries"]
+    @user_levels = current_user.user_levelings
+    @level = Level.find(params[:id])
+    current_level = @user_levels.where(level: @level).first
+    p current_level
+    current_level.update(done: true)
+    current_user.balance += @level.reward
+    current_user.save
+    @party = current_level.party
+    respond_to do |format|
+      # format.html { redirect_to movies_path }
+      format.text { render partial: "levels/stars", locals: {stars: @stars, party: @party, level: @level}, formats: [:html] }
     end
   end
 end
