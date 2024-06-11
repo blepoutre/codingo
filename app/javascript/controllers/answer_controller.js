@@ -10,6 +10,7 @@ export default class extends Controller {
     validation: Number
   };
 
+
   check() {
     switch(true) {
       case (this.reponse1Target.firstChild.nextSibling.checked):
@@ -42,10 +43,6 @@ export default class extends Controller {
           this.looseTarget.classList.add("d-block");
           }
           };
-    if (counter === 1){
-      this.compteurTarget.innerText = `Nombre de tentative restante : ${counter}`;
-    } else {
-      this.compteurTarget.innerText = `Nombre de tentatives restantes : ${counter}`;
-    }
+      this.compteurTarget.innerText = `${counter}`;
   }
 }
