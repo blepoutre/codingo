@@ -12,9 +12,13 @@
 
   <!-- Button trigger modal -->
 </header>
-  <button type="button" class="goldenBtn homeBtn" data-bs-toggle="modal" data-bs-target="#playModal">
-    PLAY NOW!
-  </button>
+  <% if current_user.nil? %>
+  <%= link_to 'Play Now', new_user_session_path, class:"goldenBtn homeBtn"%>
+  <% elsif current_user.collections.empty? %>
+  <%= link_to 'Play Now', new_collection_path, class:"goldenBtn homeBtn"%>
+  <% else %>
+  <%= link_to 'Play Now',party_path(current_user), class:"goldenBtn homeBtn"%>
+  <% end %>
 <footer id="homefooter">
   <div class="d-flex container flex-row justify-content-evenly" style="gap: 3rem;">
     <div class="card">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_07_130837) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_10_125652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,17 +74,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_130837) do
   end
 
   create_table "parties", force: :cascade do |t|
-    t.integer "resolution_time"
-    t.date "resolution_date"
-    t.integer "progression"
+    t.integer "progression", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "level_id"
     t.boolean "win", default: false
-    t.integer "number_error"
-    t.index ["level_id"], name: "index_parties_on_level_id"
+    t.integer "number_error", default: 0
     t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
+  create_table "user_levelings", force: :cascade do |t|
+    t.boolean "done"
+    t.integer "reward"
+    t.bigint "party_id", null: false
+    t.bigint "level_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_user_levelings_on_level_id"
+    t.index ["party_id"], name: "index_user_levelings_on_party_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,6 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_130837) do
   add_foreign_key "collections", "characters"
   add_foreign_key "collections", "users"
   add_foreign_key "levels", "worlds"
-  add_foreign_key "parties", "levels"
   add_foreign_key "parties", "users"
+  add_foreign_key "user_levelings", "levels"
+  add_foreign_key "user_levelings", "parties"
 end

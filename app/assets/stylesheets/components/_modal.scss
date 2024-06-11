@@ -97,7 +97,7 @@
 #font-two {
   font-family: Darumadrop one;
   bottom: 3vh !important;
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .body-confirm {
@@ -117,4 +117,21 @@
   justify-content: center!important;
   gap: 8rem!important;
   border-top: none;
+}
+
+.button-new {
+  background-color: $blue-green;
+  color: $lightyellow;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  width: 150px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.button-new:hover {
+  background-color: #274f4b;
+  color: $lightyellow;
+  font-weight: bold;
 }
