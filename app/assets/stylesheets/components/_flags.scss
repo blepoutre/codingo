@@ -54,11 +54,11 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   object-fit: cover;
-  width: 100%;
   // grid-template-columns: repeat(13, 1fr);
   // grid-template-rows: repeat(8, 1fr);
 }
 
 .rampe-image {
   grid-area: 2 / 2 / 6 / 12;
+  width: 100%;
 }
