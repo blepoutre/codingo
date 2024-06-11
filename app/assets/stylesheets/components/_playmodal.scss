@@ -12,6 +12,21 @@
   height: 80vh;
 }
 
+.playmodal-content-negative {
+  margin-top: 50px;
+  border-radius: 1.2rem;
+  background: $lightyellow;
+  padding: 15px;
+  color: $lightyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  height: 80vh;
+
+}
+
 .playmodal-body {
   background: $lightyellow;
   border-radius: 1.2rem;
@@ -31,6 +46,29 @@
     margin-bottom: 40px;
     text-align: center;
   }
+
+}
+
+.playmodal-body-negative {
+  background: $blue-green;
+  border-radius: 1.2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & h1 {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  & p, h2 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
 
 }
 
