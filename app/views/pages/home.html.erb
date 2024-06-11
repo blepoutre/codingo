@@ -2,12 +2,12 @@
   <div id="homeTitle" class="d-flex justify-content-center">
     <h2>Apprendre à coder en s'amusant !</h2>
   </div>
-  <div class="w-100 d-flex justify-content-between custom-banner">
-    <%= cl_image_tag("codingo_images/Rabbit_xyp2na", alt:"Rabbit",crop: :thumb,width:300, height:400, object_fit:"contain", id: "leftPilar") %>
-    <div id="homeLogo">
-      <h1 class="codingo">CODINGO</h1>
+  <div id= "custom-banner" class="w-100 d-flex justify-content-between">
+    <%= image_tag "bree_skate.png", alt: "Le Wagon", id: "leftPilar" %>
+    <div>
+      <%= image_tag "logo_codingo.png", alt: "Le Wagon", id: "codingo" %>
     </div>
-    <%= cl_image_tag("codingo_images/Ours", alt:"Ours",crop: :thumb,width:300, height:400, object_fit:"contain", id: "rightPilar") %>
+    <%= image_tag "than_skate.png", alt: "Le Wagon", id: "rightPilar" %>
   </div>
 
   <!-- Button trigger modal -->
@@ -23,7 +23,8 @@
   <div class="d-flex container flex-row justify-content-evenly" style="gap: 3rem;">
     <div class="card">
       <div class="imgBgd">
-        <%= cl_image_tag("codingo_images/Rabbit_xyp2na", alt:"Rabbit",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+        <img src="/app/assets/images/Ours.png" alt="" style="object-fit: contain; width: 260; height: 160">
+        <%= image_tag "corbye.png", alt: "Le Wagon", width: 260, height: 160, style: "object-fit: contain; transform: translate(-50%)" %>
       </div>
       <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -31,7 +32,7 @@
     </div>
     <div class="card">
       <div class="imgBgd">
-        <%= cl_image_tag("codingo_images/Rati", alt:"Rati",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+        <%= image_tag "lina.png", alt: "Le Wagon", width: 260, height: 160, style: "object-fit: contain;" %>
       </div>
       <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -39,30 +40,30 @@
     </div>
     <div class="card">
       <div class="imgBgd">
-        <%= cl_image_tag("codingo_images/Ours", alt:"Ours",crop: :thumb,width:260, height:160, object_fit:"contain") %>
+        <%= image_tag "than.png", alt: "Le Wagon", width: 260, height: 160, style: "object-fit: contain;" %>
       </div>
       <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>
   </div>
-  <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "animated lion on a skate board", crop: :thumb, width: 120, height: 120, id: "lionboard") %>
+  <%= image_tag "corbye_skate.png", alt: "Le Wagon", width: 260, height: 160, style: "object-fit: contain;", id: "board" %>
 
 
   <%= render "shared/playmodal" %>
   <script>
     function triggerRide() {
-      const image = document.getElementById("lionboard");
+      const image = document.getElementById("board");
       image.classList.add("animated");
       if (image) {
         setTimeout(() => {
           image.classList.remove("animated");
-        }, 20000);
+        }, 16000);
       }
     }
 
     function startAnimation() {
-      setInterval(triggerRide, 30000);
+      // setInterval(triggerRide, 30000);
       triggerRide();
     }
 
