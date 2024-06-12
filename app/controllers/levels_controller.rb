@@ -2,9 +2,10 @@ class LevelsController < ApplicationController
   def show
     @level = Level.find(params[:id])
     @user = current_user
-    @party = Party.all
+    @party_finder = @level.user_levelings
+    @party = @party_finder[0].party_id
     @counter = 0
     @reponse = ["reponse1", "reponse2", "reponse3", "reponse4", "reponse5"]
-    @user_reponse = 0
+    @stars = 0
   end
 end

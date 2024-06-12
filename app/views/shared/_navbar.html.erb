@@ -29,6 +29,7 @@
             <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Ma collection", collections_path, class:"customhover dropdown-item"%>
               <%= link_to "Mes meilleurs temps", parties_path, class:"customhover dropdown-item"%>
+              <p class = "customhover dropdown-item">Codipoints <%= current_user.balance%></p>
               <%= link_to "Déconnexion", destroy_user_session_path, data: { "turbo-method": :delete }, class:"customhover dropdown-item"%>
               <% end %>
             </div>

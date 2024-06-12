@@ -1,19 +1,7 @@
 <div class="modal fade" id="playModal" tabindex="-1" aria-labelledby="playModal" aria-hidden="true" data-answer-target="win">
   <div class="modal-dialog modal-lg">
     <div class="playmodal-content">
-      <div class="playmodal-body">
-        <div class="d-flex flex-column align-middle justify-content-center">
-          <h1>Félicitations</h1>
-          <p>
-            <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
-          </p>
-        <h2>Voici tes prouesses :<br>Temps de jeu : {chrono}<br> Tes gains : {monnaie du jeu} </h2>
-        </div>
-        <div class="playmodal-footer">
-          <%= link_to 'Retour à la carte', "#", class:"modalBtn", id: "nxtBtn" %>
-          <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
-        </div>
-      </div>
+        <%= render "stars", locals: {stars: @stars, party: @party, level: @level} %>
     <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %>
     </div>
   </div>

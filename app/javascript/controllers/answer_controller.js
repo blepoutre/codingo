@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 let counter = 3;
+let error = 3;
 
 // Connects to data-controller="answer"
 export default class extends Controller {
@@ -10,6 +11,9 @@ export default class extends Controller {
     validation: Number
   };
 
+    connect(){
+      this.csrfTokent = (document.querySelector('meta[name=csrf-token]').content);
+    }
 
   check() {
     switch(true) {
@@ -34,8 +38,20 @@ export default class extends Controller {
 
   result(userAnswer){
     if (parseInt(userAnswer) === this.validationValue){
+      error -= counter
       this.winTarget.classList.add("show");
       this.winTarget.classList.add("d-block");
+      fetch(window.location + "/finish_level",{
+          method: "PATCH",
+          headers: {"Accept": "text/plain", "X-CSRF_Token": this.csrfTokent,
+                    "Content-type": "application/json"},
+          body: JSON.stringify({"tries": error})
+        })
+      .then(reponse => reponse.text())
+      .then(data =>{
+        document.querySelector(".playmodal-body").outerHTML = data
+        console.log(data)
+      })
       } else {
         counter -= 1;
         if (counter === 0){
