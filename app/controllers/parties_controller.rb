@@ -30,7 +30,6 @@ class PartiesController < ApplicationController
     @user_levels = current_user.user_levelings
     @level = Level.find(params[:id])
     current_level = @user_levels.where(level: @level).first
-    p current_level
     current_level.update(done: true)
     current_user.balance += @level.reward
     current_user.save
