@@ -5,6 +5,6 @@ class CollectionsController < ApplicationController
   end
 
   def new
-  # @characters =
+    @characters = Character.all
   end
 end

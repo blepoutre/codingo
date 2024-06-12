@@ -36,7 +36,12 @@ class PartiesController < ApplicationController
     @party = current_level.party
     respond_to do |format|
       # format.html { redirect_to movies_path }
-      format.text { render partial: "levels/stars", locals: {stars: @stars, party: @party, level: @level}, formats: [:html] }
+      format.text { render partial: "levels/stars", locals: {stars: @stars, party: @party, level: @level}, formats: [:html]}
     end
+  end
+
+  def buying
+    current_user.balance += 100
+    current_user.save
   end
 end
