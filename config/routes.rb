@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :collections, only: [:new, :create, :index]
   resources :parties, only: [:index, :show, :new, :create]
-  resources :characters, only: [:index]
+  resources :characters, only: [:index, :show]
   patch "levels/:id/finish_level", to: "parties#finish_level", as: :finish_level
-  patch "/characters/achat", to: "parties#buying", as: :buying_item
+  patch "/characters/:id/achat", to: "characters#buying", as: :buying_item
   resources :levels, only: [:show]
 end
 
