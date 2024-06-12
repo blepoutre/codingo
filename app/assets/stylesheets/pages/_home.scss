@@ -4,37 +4,38 @@
 .imgBgd > img {
   width: 260px;
   height: auto;
-  animation: comete 3s infinite;
+  // animation: comete 3s infinite;
 }
 
-@keyframes comete {
-  0% {
-    filter: drop-shadow(0 0 5px $golden);
-  }
-  50% {
-    filter: drop-shadow(0 0 10px $golden);
-  }
-  100% {
-    filter: drop-shadow(0 0 5px $golden);
-  }
-}
+// @keyframes comete {
+//   0% {
+//     filter: drop-shadow(0 0 5px $golden);
+//   }
+//   50% {
+//     filter: drop-shadow(0 0 10px $golden);
+//   }
+//   100% {
+//     filter: drop-shadow(0 0 5px $golden);
+//   }
+// }
 
 // animated bottom keyframe
 .animated{
-  animation: ride 15s linear;
+  animation: ride 14s linear infinite;
 }
 
-#lionboard{
+#board{
   width: 120px;
   height: 120px;
-  bottom: 0;
+  bottom: -10px;
   left: -80px;
   position: absolute;
+  z-index: 2;
 }
 
 @keyframes ride {
   0% {
-    transform: translateX(0) scaleX(1);
+    transform: translateX(-10vw) scaleX(1);
   }
   50% {
     transform: translateX(calc(100vw + 160px)) scaleX(1);
@@ -43,15 +44,22 @@
     transform: translateX(calc(100vw + 160px)) scaleX(-1);
   }
   100% {
-    transform: translateX(0) scaleX(-1);
+    transform: translateX(-10vw) scaleX(-1);
   }
 }
 
-@keyframes shine {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
+// @keyframes shine {
+//   0% {
+//     left: -100%;
+//   }
+//   100% {
+//     left: 100%;
+//   }
+// }
+
+.body-background {
+  background-image: url('/assets/background2.png');
+  background-size: cover;
+  height: 100vh;
+  width: auto;
 }

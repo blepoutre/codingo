@@ -1,7 +1,10 @@
+<% navbar_class = "navbar navbar-expand-sm navbar-light navbar-lewagon" %>
+<% navbar_class += " red-background" if local_assigns[:red_background] %>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+    <a class="navbar-brand" href="#" style="object-fit: contain;">
+      <%= image_tag "logo_codingo.png", alt: "Le Wagon" %>
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,13 +22,15 @@
             <% end %>
           </li>
           <li class="nav-item dropdown">
-            <i class="avatar dropdown-toggle codlogo" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">G</i>
+            <%= image_tag "avatar_codingo.png",
+              class: "avatar dropdown-toggle",
+              id: "navbarDropdown",
+              data: { bs_toggle: "dropdown" },
+              aria: { haspopup: "true", expanded: "false" }, style: "margin: 0px 10px;" %>
               <% if current_user.nil? %>
               <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Connexion", new_user_session_path, class:"customhover dropdown-item"%>
               <% else %>
-            <!-- Ajout d'une icone temporaire à la place de Sébastien en attendant un autre avatar -->
-            <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ayubna" /> %>
             <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Ma collection", collections_path, class:"customhover dropdown-item"%>
               <%= link_to "Mes meilleurs temps", parties_path, class:"customhover dropdown-item"%>

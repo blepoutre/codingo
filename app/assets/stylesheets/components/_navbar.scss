@@ -22,27 +22,11 @@
   flex-grow: 0;
 }
 
+// Custom de l'avatar
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
-// Custom temporaire de l'avatar
-.codlogo {
-  font-family: "Bangers", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  color: $golden;
-  text-shadow: 3px 3px $red-sand;
-  width: 40px;
-  height: 40px;
-  background: $blue-green;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: solid $golden 0.5px;
-}
+
 // -------------------------
 
 // Custom du menu dropdown de la navbar
