@@ -16,9 +16,11 @@
                 </div>
       <h2 id="font-two">Leo l'intrépide</h2>
       <div class="modal-footer fix-footer-confirm">
-        <%= link_to "Modifier",  new_collection_path %>
+        <%= link_to :new_collection do %>
+        <span class="btn btn-default button-new"><i class="fa-solid fa-pencil"></i> Modifier</span>
+        <% end %>
         <%= simple_form_for [@party] do |f| %>
-          <%= f.button :submit %>
+          <%= f.submit 'Jouer !', class: "btn btn-default button-new" %>
         <% end %>
       </div>
     </div>

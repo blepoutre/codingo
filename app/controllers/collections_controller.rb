@@ -14,4 +14,5 @@ class CollectionsController < ApplicationController
     # @characters = Character.find(params[:boat_id])
     @collections = Collection.new
   end
+
 end

@@ -6,26 +6,26 @@
 
 .drapeau-1{
   grid-area: 2 / 2 / 2 / 2;
-  margin-top: -89px;
-  padding-left: 25px;
+  margin-top: -143px;
+  padding-left: 83px;
 }
 
 .drapeau-2{
   grid-area: 7 / 4 / 4 / 5;
-  margin-top: -76px;
+  margin-top: -511px;
   padding-left: 142px;
 }
 
 .drapeau-3{
-  grid-area: 7 / 6 / 3 / 7;
-  margin-top: 45px;
-  padding-left: 16px;
+  grid-area: 7 / 7 / 3 / 7;
+  margin-top: -55px;
+  padding-left: 79px;
 }
 
 .drapeau-4{
-  grid-area: 2 / 10 / 3 / 10;
-  margin-top: -89px;
-  padding-left: 70px;
+  grid-area: 1 / 13 / 3 / 11;
+  margin-top: 75px;
+  padding-right: 59px;
 }
 
 .drapeau-position-1 {
@@ -51,7 +51,7 @@
 
 .rampe {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   object-fit: cover;
   // grid-template-columns: repeat(13, 1fr);
