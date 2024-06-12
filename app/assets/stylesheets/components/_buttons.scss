@@ -43,11 +43,11 @@ $modal-btn-min-height: 40px;
 }
 
 .green {
-  background-color: $blue-green;
+  background-color: $blue-green !important;
   width: fit-content;
   height: fit-content;
   &:hover {
-    background-color: $blue-green-darker;
+    background-color: $blue-green-darker !important;
   }
 }
 

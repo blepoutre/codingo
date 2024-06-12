@@ -9,14 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="body_target">
-    <% if current_page?(controller: "pages", action: "home") %>
-      <%= render "shared/navbar", red_background: false %>
-    <% else %>
-      <%= render "shared/navbar", red_background: true %>
-      <% body_class = "body_target" %>
-      <% body_class += " body-background" if local_assigns[:body_background] %>
-    <% end %>
+  <% is_home_page =  current_page?(controller: "pages", action: "home") %>
+
+  <body class=" <%= is_home_page ? 'body-target yellowback' : 'background-2'  %>">
+      <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,89 @@
+#parties-content {
+  margin-top: 50px;
+  border-radius: 1.2rem;
+  background: $blue-green;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  height: 80vh;
+  width: 70vw;
+  position: absolute;
+  left: calc(50% - 35vw);
+}
+
+.parties-body {
+  background: $lightyellow;
+  border-radius: 1.2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & h1 {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  & p, h2 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+}
+
+#parties-content h2 {
+  color: $blue-green-darker;
+}
+
+.fa-li {
+  color: $lightyellow !important;
+  margin-right: 20px;
+  font-size: 2rem;
+  display: flex;
+  text-align: center;
+  list-style-position: inside;
+}
+
+li.custom-li {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: $lightyellow;
+}
+
+.c-star {
+  font-size: 1.2rem;
+  color: $blue-green-darker !important;
+}
+
+#parties-header {
+  position: absolute;
+  top: 0;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-parties {
+  position: relative;
+  background-image: url('/assets/lina.png');
+  left: calc(50% - 100px);
+  margin-top: 50px;
+}
+
+.statistics-window {
+  position: absolute;
+  border-radius: 1.2rem;
+  border: solid 5px $red-sand;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  background-color: $lightyellow;
+  height: 90%;
+  width: 35%;
+}
