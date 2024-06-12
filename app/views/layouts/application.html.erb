@@ -9,7 +9,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+<<<<<<< HEAD
     <body>
+=======
+  <body class="body_target">
+    <% if current_page?(root_path) %>
+      <%= render "shared/navbar", red_background: false %>
+    <% else %>
+      <%= render "shared/navbar", red_background: true %>
+      <% body_class = "body_target" %>
+      <% body_class += " body-background" if local_assigns[:body_background] %>
+    <% end %>
+>>>>>>> 361c3abbce02e64c2e859085378158324bfc92e0
     <%= yield %>
   </body>
 </html>

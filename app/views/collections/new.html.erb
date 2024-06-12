@@ -1,8 +1,3 @@
-<body class="background" style="height: 100 vh">
-<%# créer le personnage %>
-<%# bouton à destination de l'accueil %>
-<%# fin bouton à destination de l'accueil %>
-
 <!-- Modal création du personnage-->
 <div class="modal fade show d-block mt-5" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-ku">
@@ -10,24 +5,26 @@
 
       <div class="modal-body body-character">
         <%# loop here on @characters %>
-        <div class="character-info">
-          <%  @characters.each_with_index do |character, index| %>
-            <h1 class="name-character"><%= character.nickname %></h1>
-          <% end %>
-          <div class="personnality">
-            <%  @characters.each_with_index do |character, index| %>
-            <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
-            <% end %>
-          </div>
-        </div>
+
         <div class="character">
           <div id="carouselExampleFade" class="carousel slide carousel-fade">
               <div class="carousel-inner">
-               <%  @characters.each_with_index do |character, index| %>
-                <div class="carousel-item  <%= index == 0 ? "active" : "" %>" class="row justify-content-center">
-                <%= cl_image_tag(character.photos[1].key, height: 350, mt: 5, class: 'd-block mx-auto') %>
-                </div>
-                <% end %>
+
+                  <%  @characters_skins.each_with_index do |character, index| %>
+                    <div class="carousel-item d-flex <%= index == 0 ? "active" : "" %>" >
+                      <div class="character-info">
+                        <h1 class="name-character"><%= character.nickname %></h1>
+                        <div class="personnality">
+                          <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
+                        </div>
+                      </div>
+
+                      <div>
+                          <%= cl_image_tag(character.photos[1].key, height: 350, mt: 5, class: 'd-block mx-auto') %>
+                      </div>
+                    </div>
+                    <% end %>
+
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,4 +44,3 @@
     </div>
   </div>
 </div>
-</body>
