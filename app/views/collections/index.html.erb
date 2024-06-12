@@ -1,0 +1,19 @@
+
+
+  <div class="container">
+    <div class="super-container">
+      <%= image_tag "Background-coffre.png", height: 800%>
+      <%= image_tag "Rabbit.png", height: 130, style: "position: absolute; top: 80px; left: 200px; margin: 90px;"%>
+      <%= image_tag "Rati.png", height: 130, style: "position: absolute; top: 25px; right: 140px; margin: 130px;"%>
+      <%= image_tag "Corbye.png", height: 140, style: "position: absolute; top: 60px; right: 280px; margin: 130px;"%>
+      <%= image_tag "Leo-skate.png", height: 150, style: "position: absolute; top: 60px; left: 330px; margin: 130px;"%>
+      <%= link_to "Rejouer", root_path, class:"btn btn-primary my-button", style: "position: absolute; top: 60px; left: 150px; margin: 50px;" %>
+    </div>
+
+  </div>
+
+ <ul>
+  <% @collections.each do |collection| %>
+    <li><%= collection.character.name %></li>
+  <% end %>
+ </ul>

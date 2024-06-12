@@ -9,9 +9,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <% if current_page?(root_path) %>
-    <body>
+    <% if current_page?(root_path) %>
       <%= render "shared/navbar", red_background: false %>
+    <body>
   <% else %>
     <body class="background-image">
       <%= render "shared/navbar", red_background: true %>
