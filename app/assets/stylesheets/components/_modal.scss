@@ -10,7 +10,8 @@
   flex-direction: row !important;
   gap: 20px;
   margin: 15px;
-
+  width: 200%;
+  justify-content: space-evenly;
 }
 
 .modal-ku {
@@ -46,7 +47,7 @@
 
 .name-character{
   font-family: Darumadrop one;
-  font-size: 70px;
+  font-size: 60px;
   text-align: center;
 }
 
