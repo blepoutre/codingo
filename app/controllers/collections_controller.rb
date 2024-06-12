@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
   end
 
   def new
-    @characters = Character.find(params[:boat_id])
+    @characters = Character.find(params[:character_id])
     @collections = Collection.new
   end
 end

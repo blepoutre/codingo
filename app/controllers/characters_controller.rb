@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
     @characters = Character.all
     current_user
   end
+
   def show
 
   end
