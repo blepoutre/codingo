@@ -11,4 +11,12 @@ class User < ApplicationRecord
   def current_level
     user_levelings.where(done: false).joins(:level).order(:number).first
   end
+
+  def formatted_character_image_name
+    first_character_nickname = collections.first&.character&.nickname
+    return nil unless first_character_nickname
+
+    first_word = first_character_nickname.split.first.downcase
+    "#{first_word.tr(' ', '_')}.png"
+  end
 end

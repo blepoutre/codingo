@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <% is_home_page =  current_page?(controller: "pages", action: "home") %>
+  <% is_home_page =  current_page?(root_path) %>
 
   <body class=" <%= is_home_page ? 'body-target yellowback' : 'background-2'  %>">
       <%= render "shared/navbar" %>

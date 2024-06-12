@@ -9,9 +9,9 @@
   align-items: center;
   transform-origin: center;
   height: 80vh;
-  width: 70vw;
+  width: 50vw;
   position: absolute;
-  left: calc(50% - 35vw);
+  left: calc(50% - 25vw);
 }
 
 .parties-body {
@@ -29,7 +29,7 @@
     text-align: center;
   }
 
-  & p, h2 {
+  &  h2 {
     margin-bottom: 40px;
     text-align: center;
   }
@@ -71,19 +71,75 @@ li.custom-li {
 
 .avatar-parties {
   position: relative;
-  background-image: url('/assets/lina.png');
-  left: calc(50% - 100px);
+  background-image: url('/assets/lina.png') no-repeat;
+  left: 30%;
   margin-top: 50px;
 }
 
 .statistics-window {
   position: absolute;
+  display: flex;
   border-radius: 1.2rem;
   border: solid 5px $red-sand;
   top: 0;
   right: 0;
   margin: 20px;
   background-color: $lightyellow;
-  height: 90%;
+  padding: 15px;
   width: 35%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  & .parties-username {
+    color: $red-sand;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#parties-show-balance {
+
+  & p {
+    background-color: white;
+    padding: 10px 24px;
+    border-radius: 50vh;
+    border: solid 1px $red-sand;
+  }
+
+  & img {
+    height: 30px;
+    width: auto;
+    margin-right: -10px;
+  }
+}
+
+.parties-character-sentence {
+  background-color: $lightyellow;
+  border: solid 1px $golden;
+  border-radius: 1.2rem;
+  padding: 20px;
+  width: 80%;
+  height: fit-content;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.last-party {
+  background-color: $lightyellow;
+  border: solid 5px $red-sand;
+  border-radius: 1.2rem;
+  padding: 40px;
+  width: 80%;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  & p {
+    font-weight: 500;
+  }
 }
