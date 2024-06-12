@@ -11,3 +11,9 @@
     </div>
 
   </div>
+
+ <ul>
+  <% @collections.each do |collection| %>
+    <li><%= collection.character.name %></li>
+  <% end %>
+ </ul>

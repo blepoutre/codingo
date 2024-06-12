@@ -9,25 +9,25 @@
     <div class="modal-content content-character">
 
       <div class="modal-body body-character">
+        <%# loop here on @characters %>
         <div class="character-info">
-        <h1 class="name-character">Leo l'intrépide</h1>
-        <div class="personnality">
-        <p> <i class="fa-solid fa-square-check"></i> Capable de produire un rugissement terrifiant</p>
-        <p> <i class="fa-solid fa-square-check"></i> Capable de rouler et de combattre pendant de longues périodes sans se fatiguer</p>
-        </div>
+          <%  @characters.each_with_index do |character, index| %>
+            <h1 class="name-character"><%= character.nickname %></h1>
+          <% end %>
+          <div class="personnality">
+            <%  @characters.each_with_index do |character, index| %>
+            <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
+            <% end %>
+          </div>
         </div>
         <div class="character">
           <div id="carouselExampleFade" class="carousel slide carousel-fade">
               <div class="carousel-inner">
-                <div class="carousel-item active" class="row justify-content-center">
-                <%= image_tag "Ours.png", height:450, class: 'd-block mx-auto' %>
+               <%  @characters.each_with_index do |character, index| %>
+                <div class="carousel-item  <%= index == 0 ? "active" : "" %>" class="row justify-content-center">
+                <%= cl_image_tag(character.photos[1].key, height: 350, mt: 5, class: 'd-block mx-auto') %>
                 </div>
-                <div class="carousel-item">
-                <%= image_tag "Rabbit.png", height:450, class: 'd-block mx-auto' %>
-                </div>
-                <div class="carousel-item">
-                <%= image_tag "Rati.png", height:450, class: 'd-block mx-auto' %>
-                </div>
+                <% end %>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

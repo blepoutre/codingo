@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :collections, only: [:new, :create, :index]
   resources :parties, only: [:index, :show, :new, :create]
+  patch "levels/:id/finish_level", to: "parties#finish_level", as: :finish_level
   resources :levels, only: [:show]
 end
 

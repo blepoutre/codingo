@@ -1,0 +1,14 @@
+      <div class="playmodal-body">
+        <div class="d-flex flex-column align-middle justify-content-center">
+          <h1>Félicitations</h1>
+            <%= @stars %>
+          <p>
+            <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
+          </p>
+            <h2> Tu as gagné : <%= @level.reward %> Codipoints </h2>
+        </div>
+        <div class="playmodal-footer">
+          <%= link_to 'Retour à la carte', party_path(@party), class:"modalBtn", id: "nxtBtn" %>
+          <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
+        </div>
+      </div>
