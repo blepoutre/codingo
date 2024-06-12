@@ -9,14 +9,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
        %>
       <div class="modal-body body-confirm">
-      <h1 id="font-one">Bravo! tu as choisi</h1>
+      <h1 id="font-two">Bravo! tu as choisi</h1>
         <div class="row justify-content-center">
-                <%= image_tag "Ours1.png", height:230, class: 'd-block mx-auto' %>
+                <%= cl_image_tag(@character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
                 </div>
-      <h2 id="font-two">Leo l'intrépide</h2>
+      <h2 id="font-two"><%= @character.nickname %></h2>
       <div class="modal-footer fix-footer-confirm">
         <%= link_to "Modifier",  new_collection_path %>
-        <%= simple_form_for [@party] do |f| %>
+        <%= simple_form_for [@character, @party] do |f| %>
           <%= f.button :submit %>
         <% end %>
       </div>

@@ -1,19 +1,27 @@
 class PartiesController < ApplicationController
   def show
-    @party = Party.find(params[:id])
+    @party = Party.find(current_user.parties)
     @user_levels = current_user.user_levelings
   end
 
   def new
     @party = Party.new
+    @character = Character.find(params[:character_id])
   end
 
   def create
+    @character = Character.find(params[:character_id])
     @party = Party.new
     @user = current_user
     @party.user = @user
     @levels = Level.all
     @party.save
+
+    @collection = Collection.create(
+      character_id: @character.id,
+      user_id: @user.id
+    )
+
     @levels.each do |level|
       @user_level = UserLeveling.create(
         level: level,
