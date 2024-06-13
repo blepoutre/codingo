@@ -4,8 +4,7 @@ class CollectionsController < ApplicationController
   end
 
   def index
-    @collections = Collection.all
-    @characters = Character.all
+    @collections = current_user.characters
   end
 
   def new
