@@ -11,7 +11,7 @@
                 <% end %>
                 <div class="statistics-window">
                   <%# <% is_current_user = urrent_user.present? %>
-                  <p class="parties-username"><%= current_user.name.present? ? current_user.name : "<cureent_user.name>" %></p>
+                  <p class="parties-username"> CodiCoins </p>
                   <div id="parties-show-balance">
                     <p id="parties-balance"><%= current_user.balance %>
                     <%= image_tag "wheel2.png", id: "parties-unit" %>
@@ -19,11 +19,11 @@
                   </div>
                 </div>
                 <div class="parties-character-sentence">
-                  <h5><%= current_user.collections.first %></h5>
-                  <p><em>"<%= current_user.collections.first.character.personality %>"</em></p>
+                  <h5><%= @character&.nickname %></h5>
+                  <p><em>"<%= @character&.personality %>"</em></p>
                 </div>
                 <div class="last-party">
-                  <p>Dernier niveau en cours : <%= current_user.parties.last&.user_levelings&.last&.level&.number || '-' %></p>
+                  <p>Dernier niveau en cours : <%= "Niveau #{@current_level.number}" || '-' %></p>
                   <p>Résultat de la dernière partie : <%= current_user.parties.last&.user_levelings&.last&.level&.reward || '-' %></p>
                 </div>
               </div>
