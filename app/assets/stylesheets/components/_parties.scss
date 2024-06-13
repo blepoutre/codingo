@@ -1,0 +1,150 @@
+#parties-content {
+  margin-top: 50px;
+  border-radius: 1.2rem;
+  background: $blue-green;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  height: 80vh;
+  width: 50vw;
+  position: absolute;
+  left: calc(50% - 25vw);
+}
+
+.parties-body {
+  background: $lightyellow;
+  border-radius: 1.2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & h1 {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  &  h2 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+}
+
+#parties-content h2 {
+  color: $blue-green-darker;
+}
+
+.fa-li {
+  color: $lightyellow !important;
+  margin-right: 20px;
+  font-size: 2rem;
+  display: flex;
+  text-align: center;
+  list-style-position: inside;
+}
+
+li.custom-li {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: $lightyellow;
+}
+
+.c-star {
+  font-size: 1.2rem;
+  color: $blue-green-darker !important;
+}
+
+#parties-header {
+  position: absolute;
+  top: 0;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-parties {
+  position: relative;
+  background-image: url('/assets/lina.png') no-repeat;
+  left: 30%;
+  margin-top: 50px;
+}
+
+.statistics-window {
+  position: absolute;
+  display: flex;
+  border-radius: 1.2rem;
+  border: solid 5px $red-sand;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  background-color: $lightyellow;
+  padding: 15px;
+  width: 35%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  & .parties-username {
+    color: $red-sand;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#parties-show-balance {
+
+  & p {
+    background-color: white;
+    padding: 10px 24px;
+    border-radius: 50vh;
+    border: solid 1px $red-sand;
+  }
+
+  & img {
+    height: 30px;
+    width: auto;
+    margin-right: -10px;
+  }
+}
+
+.parties-character-sentence {
+  background-color: $lightyellow;
+  border: solid 1px $golden;
+  border-radius: 1.2rem;
+  padding: 20px;
+  width: 80%;
+  height: fit-content;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.last-party {
+  background-color: $lightyellow;
+  border: solid 5px $red-sand;
+  border-radius: 1.2rem;
+  padding: 40px;
+  width: 80%;
+  height: fit-content;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  & p {
+    font-weight: 500;
+  }
+}
+
+.parties-btn {
+  position: relative;
+  top: -10px;
+}
