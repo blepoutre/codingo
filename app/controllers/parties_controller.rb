@@ -1,19 +1,28 @@
 class PartiesController < ApplicationController
   def show
-    @party = Party.find(params[:id])
+    @party = Party.find(current_user.parties)
     @user_levels = current_user.user_levelings
+    @character = Character.find(current_user.collections.first.character_id)
   end
 
   def new
     @party = Party.new
+    @character = Character.find(params[:character_id])
   end
 
   def create
+    @character = Character.find(params[:character_id])
     @party = Party.new
     @user = current_user
     @party.user = @user
     @levels = Level.all
     @party.save
+
+    @collection = Collection.create(
+      character_id: @character.id,
+      user_id: @user.id
+    )
+
     @levels.each do |level|
       @user_level = UserLeveling.create(
         level: level,
@@ -35,8 +44,7 @@ class PartiesController < ApplicationController
     current_user.save
     @party = current_level.party
     respond_to do |format|
-      # format.html { redirect_to movies_path }
-      format.text { render partial: "levels/stars", locals: {stars: @stars, party: @party, level: @level}, formats: [:html] }
+      format.text { render partial: "levels/stars", locals: {stars: @stars, party: @party, level: @level}, formats: [:html]}
     end
   end
 end

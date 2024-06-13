@@ -2,29 +2,39 @@
 <div class="modal fade show d-block mt-5" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-ku">
     <div class="modal-content content-character">
-
-      <div class="modal-body body-character">
+      <div class="modal-body body-character text-center">
         <%# loop here on @characters %>
-
         <div class="character">
           <div id="carouselExampleFade" class="carousel slide carousel-fade">
               <div class="carousel-inner">
-
                   <%  @characters_skins.each_with_index do |character, index| %>
-                    <div class="carousel-item d-flex <%= index == 0 ? "active" : "" %>" >
-                      <div class="character-info">
-                        <h1 class="name-character"><%= character.nickname %></h1>
-                        <div class="personnality">
-                          <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
-                        </div>
-                      </div>
 
-                      <div classs="skin">
-                          <%= cl_image_tag(character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
-                      </div>
-                    </div>
+                          <div class="carousel-item d-flex <%= index == 0 ? "active" : "" %>" >
+                            <div class="character-info">
+                              <h1 class="name-character"><%= character.nickname %></h1>
+                              <div class="personnality">
+                                <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
+                              </div>
+                            </div>
+                            <div>
+                                <%= cl_image_tag(character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
+                                  <% if current_user.collections.empty? %>
+                                    <%= link_to "Choisir", new_character_party_path(character.id), class:"button-new mt-5"%>
+                                  <% elsif current_user.collections.exists?(character_id: character.id) %>
+                                    <h3><%= character.nickname %> est déjà dans ta collections</h3>
+                                  <% elsif current_user.balance < character.price %>
+                                    <h3><%= character.price %> Codicoins</h3>
+                                    <h3>Pas assez de Codicoins</h3>
+                                  <% else %>
+                                    <h3><%= character.price %> Codicoins</h3>
+                                    <%= simple_form_for [@collection] do |f| %>
+                                      <%= f.hidden_field :character_id, value: character.id %>
+                                      <%= f.submit "Acheter", class: "button-new" %>
+                                    <% end %>
+                                  <% end %>
+                            </div>
+                          </div>
                     <% end %>
-
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,9 +47,6 @@
             </div>
         </div>
         </div>
-      <div class="fix-footer">
-       <%= link_to "Valider", new_party_path, class:"btn btn-primary my-button" %>
-      </div>
     </div>
     </div>
   </div>
