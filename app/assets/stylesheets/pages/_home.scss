@@ -21,7 +21,7 @@
 
 // animated bottom keyframe
 .animated{
-  animation: ride 14s linear infinite;
+  animation: ride 13s linear infinite;
 }
 
 #board{
@@ -31,6 +31,11 @@
   left: -80px;
   position: absolute;
   z-index: 2;
+  transition: opacity 0.1s ease;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 @keyframes ride {
@@ -62,4 +67,8 @@
   background-size: cover;
   height: 100vh;
   width: auto;
+}
+
+.yellowback {
+  background-color: $lightyellow;
 }

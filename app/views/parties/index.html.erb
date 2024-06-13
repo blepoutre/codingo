@@ -1,19 +1,36 @@
-<div class="background-2">
-  <div class="super-container">
-    <div class="card-classement">
-      <div class="inside-card">
-          <h2 class="my-3">Classement des parties</h2>
-            <div>
-              <ul class="mt-5">
-                <li>Partie n°1 <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><p> 9 minutes </p></li>
-                <li>Partie n°2 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><p> 7 minutes </p></li>
-                <li>Partie n°3 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><p> 5 minutes </p></li>
-              </ul>
-              <div id="partiesBtn">
-                <%# <button id="green" type="button"  class="modalBtn" data-bs-dismiss="modal">Play !</button> %>
-                <%= link_to "Jouer !", "#", class: "modalBtn green" %>
+  <div class="container">
+      <div id="parties-content">
+          <div class="parties-body">
+              <div style="height: 100%; width: 100%; position: relative;">
+                <%= link_to "Ma collection", collections_path(:user_id), class: "modalBtn green", style: "position: absolute; top: 0; left: 0; margin: 50px 50px;" %>
+                <% image_name = current_user.formatted_character_image_name %>
+                <% if image_name %>
+                  <%= image_tag image_name, height: "auto", width: "35%", class: "avatar-parties" %>
+                <% else %>
+                  Aucun personnage trouvé
+                <% end %>
+                <div class="statistics-window">
+                  <%# <% is_current_user = urrent_user.present? %>
+                  <p class="parties-username"><%= current_user.name.present? ? current_user.name : "<cureent_user.name>" %></p>
+                  <div id="parties-show-balance">
+                    <p id="parties-balance"><%= current_user.balance %>
+                    <%= image_tag "wheel2.png", id: "parties-unit" %>
+                    </p>
+                  </div>
+                </div>
+                <div class="parties-character-sentence">
+                  <h5><%= current_user.collections.first.character.nickname %></h5>
+                  <p><em>"<%= current_user.collections.first.character.personality %>"</em></p>
+                </div>
+                <div class="last-party">
+                  <p>Dernier niveau en cours : <%= current_user.parties.last&.user_levelings&.last&.level&.number || '-' %></p>
+                  <p>Résultat de la dernière partie : <%= current_user.parties.last&.user_levelings&.last&.level&.reward || '-' %></p>
+                </div>
               </div>
-        </div>
-      </div>
-</div>
-</div>
+              <div class="playmodal-footer" style="height: 100%">
+                <%# <button id="green" type="button"  class="modalBtn" data-bs-dismiss="modal">Play !</button> %>
+                <%= link_to "Jouer !", party_path(current_user), class: "modalBtn green parties-btn" %>
+              </div>
+            </div>
+    </div>
+  </div>

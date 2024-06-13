@@ -7,5 +7,6 @@ class LevelsController < ApplicationController
     @counter = 0
     @reponse = ["reponse1", "reponse2", "reponse3", "reponse4", "reponse5"]
     @stars = 0
+    @character = Character.find(current_user.collections.first.character_id)
   end
 end
