@@ -3,7 +3,7 @@
     <div class="drapeau-<%= index %>">
        <% if user_level.done || user_level.id == current_user.current_level.id%>
         <%= link_to level_path(user_level.level) do %>
-          <%= image_tag "Drapeau vert.png", width: 200 , height: 200, class: "drapeau-position-#{index}" %>
+          <%= image_tag "Drapeau vert.png", width: 200 , height: 200, class: "drapeau-position-#{index}", data: { controller: "start-level", start_level_target: "startFlag", action: "click->start-level#storeStartTime" } %>
         <% end %>
       <% else %>
         <%= image_tag "Drapeau rouge.png", width: 200 , height: 200, class: "drapeau-position-#{index}" %>

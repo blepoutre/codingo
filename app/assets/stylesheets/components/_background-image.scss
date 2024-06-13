@@ -1,6 +1,9 @@
 .background-image {
   background-image: asset-url("Background.png");
   background-size: cover;
+  // recentrage du background pour eviter la bande bleu en bas de l'écran
+  height: 100vh;
+  background-position: center;
 }
 
 .level-image{

@@ -22,9 +22,10 @@
                   <h5><%= @character&.nickname %></h5>
                   <p><em>"<%= @character&.personality %>"</em></p>
                 </div>
-                <div class="last-party">
+                <div class="last-party" data-controller="playing-time end-level">
                   <p>Dernier niveau en cours : <%= "Niveau #{@current_level.number}" || '-' %></p>
-                  <p>Résultat de la dernière partie : <%= current_user.parties.last&.user_levelings&.last&.level&.reward || '-' %></p>
+                  <%# <p>Meilleur temps : <span data-end-level-target="chrono"></span></p> %>
+                  <p>Temps de connexion : <span data-playing-time-target="duration"></span></p>
                 </div>
               </div>
               <div class="playmodal-footer" style="height: 100%">
