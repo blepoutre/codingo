@@ -93,35 +93,35 @@ puts "--------------------------------Characters--------------------------------
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098433/codingo_images/Lina_qgcqwk.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098433/codingo_images/Lina_-_Skate.png")
-character = Character.new(nickname: "Lina la puissante", personality: "Lina est agile et rapide, connue pour ses figures acrobatiques impressionnantes. Elle a un sens inné de l'équilibre et une puissance remarquable, permettant des tricks audacieux. Ses amis admirent sa capacité à combiner force et précision.")
+character = Character.new(nickname: "Lina la puissante", personality: "Lina est agile et rapide, connue pour ses figures acrobatiques impressionnantes. Elle a un sens inné de l'équilibre et une puissance remarquable, permettant des tricks audacieux. Ses amis admirent sa capacité à combiner force et précision.", price: 30)
 character.photos.attach(io: file1, filename: "Lina.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Lina-skate.png", content_type: "image/png")
 character.save
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098436/codingo_images/Bree_czohz4.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098436/codingo_images/Bree_-_Skate_hyb7k8.png")
-character = Character.new(nickname: "Bree la force tranquille", personality: "Bree est la force tranquille du groupe. Toujours présente pour ses amis, elle a un cœur d'or. Elle utilise sa puissance pour effectuer des tricks spectaculaires et adore explorer de nouveaux terrains de skate.")
+character = Character.new(nickname: "Bree la force tranquille", personality: "Bree est la force tranquille du groupe. Toujours présente pour ses amis, elle a un cœur d'or. Elle utilise sa puissance pour effectuer des tricks spectaculaires et adore explorer de nouveaux terrains de skate.", price: 30)
 character.photos.attach(io: file1, filename: "Bree.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Bree-skate.png", content_type: "image/png")
 character.save
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098436/codingo_images/Leo_p4kqn4.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098434/codingo_images/Leo_-_Skate_jt7ool.png")
-character = Character.new(nickname: "Leo l'intrépide", personality: "Leo est plein de courage et de détermination. Avec son énergie débordante, il est toujours prêt à relever de nouveaux défis. Sa passion pour le skate et son enthousiasme contagieux en font un membre précieux du groupe.")
+character = Character.new(nickname: "Leo l'intrépide", personality: "Leo est plein de courage et de détermination. Avec son énergie débordante, il est toujours prêt à relever de nouveaux défis. Sa passion pour le skate et son enthousiasme contagieux en font un membre précieux du groupe.", price: 30)
 character.photos.attach(io: file1, filename: "Leo.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Leo-skate.png", content_type: "image/png")
 character.save
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098434/codingo_images/Corbye_e9beoc.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098436/codingo_images/Corbye_-_Skate_ezex4i.png")
-character = Character.new(nickname: "Corbye l'idéaliste", personality: "Stratège du groupe. Toujours à l'affût de nouvelles techniques, iel observe attentivement ses amis pour perfectionner ses propres mouvements. Son habileté et son intelligence en font un membre indispensable de l'équipe.")
+character = Character.new(nickname: "Corbye l'idéaliste", personality: "Stratège du groupe. Toujours à l'affût de nouvelles techniques, iel observe attentivement ses amis pour perfectionner ses propres mouvements. Son habileté et son intelligence en font un membre indispensable de l'équipe.", price: 30)
 character.photos.attach(io: file1, filename: "Corbye.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Corbye-skate.png", content_type: "image/png")
 character.save
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098433/codingo_images/Than_cl18ns.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098434/codingo_images/Than_-_Skate_eo5x6j.png")
-character = Character.new(nickname: "Than l'audacieux", personality: "SThan est mystérieux et audacieux, avec une vitesse incroyable et une souplesse hors du commun. Il aime prendre des risques et tenter des figures inédites, captivant l'attention de tous par ses performances impressionnantes.")
+character = Character.new(nickname: "Than l'audacieux", personality: "Than est mystérieux et audacieux, avec une vitesse incroyable et une souplesse hors du commun. Il aime prendre des risques et tenter des figures inédites, captivant l'attention de tous par ses performances impressionnantes.", price: 30)
 character.photos.attach(io: file1, filename: "Than.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Than-skate.png", content_type: "image/png")
 character.save

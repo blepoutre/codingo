@@ -3,7 +3,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="object-fit: contain;">
+    <a class="navbar-brand" href="/" style="object-fit: contain;">
       <%= image_tag "logo_codingo.png", alt: "Le Wagon" %>
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
           <li>
             <% if current_user.nil? %>
             <% else %>
-            <a class="nav-link" href="/collections">Mon espace</a>
+            <a class="nav-link" href="/collections/new">Boutique</a>
             <% end %>
           </li>
           <li class="nav-item dropdown">
@@ -33,7 +33,7 @@
               <% else %>
             <div class="custom dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Ma collection", collections_path, class:"customhover dropdown-item"%>
-              <%= link_to "Mes meilleurs temps", parties_path, class:"customhover dropdown-item"%>
+              <%= link_to "Ma partie", party_path(current_user), class:"customhover dropdown-item"%>
               <p class = "customhover dropdown-item">Codipoints <%= current_user.balance%></p>
               <%= link_to "Déconnexion", destroy_user_session_path, data: { "turbo-method": :delete }, class:"customhover dropdown-item"%>
               <% end %>

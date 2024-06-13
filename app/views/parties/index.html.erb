@@ -21,9 +21,6 @@
                 <div class="parties-character-sentence">
                   <h5><%= current_user.collections.first.character.nickname %></h5>
                   <p><em>"<%= current_user.collections.first.character.personality %>"</em></p>
-
-                  <%# current_user.collections.each do |t|
-                    t.character.nickname %>
                 </div>
                 <div class="last-party">
                   <p>Dernier niveau en cours : <%= current_user.parties.last&.user_levelings&.last&.level&.number || '-' %></p>

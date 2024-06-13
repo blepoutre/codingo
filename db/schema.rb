@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_11_145917) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_12_183356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_145917) do
     t.string "sentence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
   end
 
   create_table "collections", force: :cascade do |t|
@@ -78,8 +79,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_145917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.integer "number_error", default: 0
     t.boolean "win", default: false
+    t.integer "number_error", default: 0
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
 

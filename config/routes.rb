@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :collections, only: [:new, :create, :index]
-  resources :parties, only: [:index, :show, :new, :create]
+  resources :collections, only: [:show, :new, :index, :create]
+  resources :parties, only: [:index, :show]
+  resources :characters, only: [:index, :show] do
+    resources :parties, only: [:new, :create]
+  end
   patch "levels/:id/finish_level", to: "parties#finish_level", as: :finish_level
+  patch "/characters/:id/achat", to: "collections#buying", as: :buying_item
   resources :levels, only: [:show]
 end
 
