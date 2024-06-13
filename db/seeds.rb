@@ -121,7 +121,7 @@ character.save
 
 file1 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098433/codingo_images/Than_cl18ns.png")
 file2 = URI.open("https://res.cloudinary.com/djp2y2hvl/image/upload/v1718098434/codingo_images/Than_-_Skate_eo5x6j.png")
-character = Character.new(nickname: "Than l'audacieux", personality: "SThan est mystérieux et audacieux, avec une vitesse incroyable et une souplesse hors du commun. Il aime prendre des risques et tenter des figures inédites, captivant l'attention de tous par ses performances impressionnantes.", price: 30)
+character = Character.new(nickname: "Than l'audacieux", personality: "Than est mystérieux et audacieux, avec une vitesse incroyable et une souplesse hors du commun. Il aime prendre des risques et tenter des figures inédites, captivant l'attention de tous par ses performances impressionnantes.", price: 30)
 character.photos.attach(io: file1, filename: "Than.png", content_type: "image/png")
 character.photos.attach(io: file2, filename: "Than-skate.png", content_type: "image/png")
 character.save

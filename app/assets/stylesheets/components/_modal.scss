@@ -81,6 +81,7 @@
   width: 150px;
   font-size: 16px;
   margin-bottom: 20px;
+  font-family: Arial!important;
 }
 
 .my-button:hover {
@@ -139,4 +140,8 @@
 
 .carousel-characters {
   display: flex;
+}
+
+.skin {
+  align-items: center;
 }

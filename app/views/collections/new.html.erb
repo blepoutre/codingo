@@ -8,6 +8,7 @@
           <div id="carouselExampleFade" class="carousel slide carousel-fade">
               <div class="carousel-inner">
                   <%  @characters_skins.each_with_index do |character, index| %>
+
                           <div class="carousel-item d-flex <%= index == 0 ? "active" : "" %>" >
                             <div class="character-info">
                               <h1 class="name-character"><%= character.nickname %></h1>
@@ -18,7 +19,7 @@
                             <div>
                                 <%= cl_image_tag(character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
                                   <% if current_user.collections.empty? %>
-                                    <%= link_to "Choisir #{character.nickname}", new_character_party_path(character.id), class:"button-new mt-5"%>
+                                    <%= link_to "Choisir", new_character_party_path(character.id), class:"button-new mt-5"%>
                                   <% elsif current_user.collections.exists?(character_id: character.id) %>
                                     <h3><%= character.nickname %> est déjà dans ta collections</h3>
                                   <% elsif current_user.balance < character.price %>
