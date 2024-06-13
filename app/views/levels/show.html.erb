@@ -24,6 +24,6 @@
         <button id="answer-response" type="submit" class="modalBtn mt-2 green" data-action="click->answer#check">Répondre !</button>
         <h4>Nombre de tentative(s) restante(s) : <span id="counter" data-answer-target = "compteur">3</span></h4>
       </fieldset>
-      <%= cl_image_tag(@character.photos[1].key, height: 360, class: 'm-5') %>
+      <%= cl_image_tag(@character.photos[0].key, height: 360, class: 'm-5') %>
     </div>
 </div>
