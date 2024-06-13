@@ -127,6 +127,3 @@ character.photos.attach(io: file2, filename: "Than-skate.png", content_type: "im
 character.save
 
 puts "--------------------------------End of seed------------------------------------"
-
-
-collection_1 = Collection.create!(user_id:4, character_id: 11)
