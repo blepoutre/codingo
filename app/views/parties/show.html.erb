@@ -9,3 +9,25 @@
       </div>
       <% end %>
 </div>
+<%= cl_image_tag(@character.photos[1].key, width: 260, height: 160, style: "object-fit: contain;", id: "board") %>
+
+  <script>
+    function triggerRide() {
+      const image = document.getElementById("board");
+      image.classList.add("animated");
+      if (image) {
+        setTimeout(() => {
+          image.classList.remove("animated");
+        }, 16000);
+      }
+    }
+
+    function startAnimation() {
+      // setInterval(triggerRide, 30000);
+      triggerRide();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      startAnimation();
+    });
+  </script>

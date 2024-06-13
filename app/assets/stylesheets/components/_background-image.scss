@@ -1,5 +1,9 @@
 .background-image {
-  // background-color: aqua;
   background-image: asset-url("Background.png");
+  background-size: cover;
+}
+
+.level-image{
+  background-image: asset-url("Background2.png");
   background-size: cover;
 }

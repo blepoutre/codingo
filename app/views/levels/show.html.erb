@@ -1,4 +1,4 @@
-<div style="background-image: url('https://res.cloudinary.com/djp2y2hvl/image/upload/v1717751247/codingo_images/Background_lbnvro.png'); object-content: fit-content; height: 100vh; ;">
+
  <div class="container">
     <%= render "theory"%>
 
@@ -10,6 +10,7 @@
       </div>
 
     <!-- Answer -->
+    <div class="d-flex justify-content-center">
       <fieldset id="fieldset" data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
           <%= render "success"%>
           <%= render "fail"%>
@@ -24,5 +25,6 @@
         <button id="answer-response" type="submit" class="modalBtn mt-2 green" data-action="click->answer#check">Répondre !</button>
         <h4>Nombre de tentative(s) restante(s) : <span id="counter" data-answer-target = "compteur">3</span></h4>
       </fieldset>
+      <%= cl_image_tag(@character.photos[1].key, height: 360, class: 'm-5') %>
     </div>
 </div>

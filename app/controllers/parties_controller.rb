@@ -2,6 +2,7 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(current_user.parties)
     @user_levels = current_user.user_levelings
+    @character = Character.find(current_user.collections.first.character_id)
   end
 
   def new
