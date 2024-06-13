@@ -18,7 +18,7 @@
         <%= link_to :new_collection do %>
         <span class="btn btn-default button-new"><i class="fa-solid fa-pencil"></i> Modifier</span>
         <% end %>
-        <%= simple_form_for [@party] do |f| %>
+        <%= simple_form_for [@character, @party] do |f| %>
           <%= f.submit 'Jouer !', class: "btn btn-default button-new" %>
         <% end %>
       </div>
