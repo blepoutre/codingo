@@ -121,7 +121,7 @@ li.custom-li {
   padding: 20px;
   width: 80%;
   height: fit-content;
-  margin: 20px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -134,7 +134,7 @@ li.custom-li {
   padding: 40px;
   width: 80%;
   height: fit-content;
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -142,4 +142,9 @@ li.custom-li {
   & p {
     font-weight: 500;
   }
+}
+
+.parties-btn {
+  position: relative;
+  top: -10px;
 }

@@ -32,7 +32,7 @@
               </div>
               <div class="playmodal-footer" style="height: 100%">
                 <%# <button id="green" type="button"  class="modalBtn" data-bs-dismiss="modal">Play !</button> %>
-                <%= link_to "Jouer !", "#", class: "modalBtn green", style: "position: absolute; margin-bottom: 50px;" %>
+                <%= link_to "Jouer !", party_path(current_user), class: "modalBtn green parties-btn" %>
               </div>
             </div>
     </div>
