@@ -17,9 +17,9 @@
                               </div>
                             </div>
                             <div>
-                                <%= cl_image_tag(character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
+                                <%= cl_image_tag(character.photos[1].key, height: 560, class: 'd-block mx-auto') %>
                                   <% if current_user.collections.empty? %>
-                                    <%= link_to "Choisir", new_character_party_path(character.id), class:"button-new mt-5"%>
+                                    <%= link_to "Choisir", new_character_party_path(character.id), class:"button-news mt-5"%>
                                   <% elsif current_user.collections.exists?(character_id: character.id) %>
                                     <h3><%= character.nickname %> est déjà dans ta collections</h3>
                                   <% elsif current_user.balance < character.price %>
