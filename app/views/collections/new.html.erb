@@ -21,7 +21,7 @@
                                   <% if current_user.collections.empty? %>
                                     <%= link_to "Choisir", new_character_party_path(character.id), class:"button-news mt-5"%>
                                   <% elsif current_user.collections.exists?(character_id: character.id) %>
-                                    <h3><%= character.nickname %> est déjà dans ta collections</h3>
+                                    <h3>Déjà dans ta collection</h3>
                                   <% elsif current_user.balance < character.price %>
                                     <h3><%= character.price %> Codicoins</h3>
                                     <h3>Pas assez de Codicoins</h3>

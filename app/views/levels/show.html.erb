@@ -15,7 +15,7 @@
       <fieldset id="fieldset" data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
           <%= render "success"%>
           <%= render "fail"%>
-        <legend class="mb-2">Qu'est-il afficher sur le terminal ?</legend>
+        <legend class="mb-2"><%= @level.question %></legend>
         <% @level.answers.each_with_index do |answer, index| %>
           <div class="answer-wrapper" data-answer-target="<%=@reponse[@counter]%>">
               <input class="answer-input" type="radio" id="scales_<%= index %>" name="scales"/>

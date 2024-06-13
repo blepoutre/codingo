@@ -34,11 +34,28 @@ world.save!
 puts "--------------------------------level 1------------------------------------"
 
 level1 = Level.new(
-  validation: 18,
+  validation: "18",
+  title: "Opérateur Basique",
+  concept: "Addition (+) :
+          Imagine que tu as 3 bonbons et que ton ami te donne 2 bonbons de plus.
+          Tu as maintenant 3 + 2 bonbons, ce qui fait 5 bonbons en tout.
+
+          Soustraction (-) :
+          Tu as 5 bonbons et tu en manges 2.
+          Il te reste maintenant 5 - 2 bonbons, ce qui fait 3 bonbons.
+
+          Multiplication (x) :
+          Tu as 2 sacs, et dans chaque sac, il y a 3 bonbons.
+          Tu as donc 2 x 3 bonbons, ce qui fait 6 bonbons en tout.
+
+          Division (÷) :
+          Tu as 8 bonbons et tu veux les partager équitablement avec 3 amis (donc 4 enfants en tout).
+          Chaque enfant reçoit 8 ÷ 4 bonbons, ce qui fait 2 bonbons chacun.",
+  question: "Qu'est-il afficher sur la caisse enregistreuse ?",
   reward: 10,
   world: World.first,
   answers: ["21", "34", "67", "100", "18"],
-  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
+  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true&showInstructions=true",
   number: 1
 )
 level1.save!
@@ -46,11 +63,24 @@ level1.save!
 puts "--------------------------------level 2------------------------------------"
 
 level2 = Level.new(
-  validation: 18,
-  reward: 15,
+  validation: "10",
+  title: "Les Boucles",
+  concept: "Imagine que tu veux dessiner 10 étoiles sur une feuille de papier.
+            Sans boucle :
+	            1.	Tu dessines une étoile.
+	            2.	Tu dessines une autre étoile.
+	            3.	Tu dessines encore une étoile.
+	            4.	Tu continues jusqu'à ce que tu aies dessiné 10 étoiles.
+            C'est un peu long et ennuyeux, non ?
+            Avec une boucle :
+	            1.	Tu dis à l'ordinateur : Dessine une étoile.
+	            2.	Ensuite, tu dis : Répète cette action 10 fois.
+            L'ordinateur va alors dessiner les 10 étoiles tout seul, sans que tu aies besoin de lui dire 10 fois.",
+  question: "Combien d'étoiles vois-tu ?",
+  reward: 20,
   world: World.first,
-  answers: ["21", "34", "67", "100", "18"],
-  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
+  answers: ["10", "9", "19", "21", "50"],
+  url: "https://trinket.io/embed/blocks/c6759f273c?hideGeneratedCode=true&showInstructions=true",
   number: 2
 )
 level2.save!
@@ -58,11 +88,27 @@ level2.save!
 puts "--------------------------------level 3------------------------------------"
 
 level3 = Level.new(
-  validation: 18,
-  reward: 20,
+  validation: "18",
+  title: "Opérateur Basique",
+  concept: "Addition (+) :
+          Imagine que tu as 3 bonbons et que ton ami te donne 2 bonbons de plus.
+          Tu as maintenant 3 + 2 bonbons, ce qui fait 5 bonbons en tout.
+
+          Soustraction (-) :
+          Tu as 5 bonbons et tu en manges 2.
+          Il te reste maintenant 5 - 2 bonbons, ce qui fait 3 bonbons.
+
+          Multiplication (x) :
+          Tu as 2 sacs, et dans chaque sac, il y a 3 bonbons.
+          Tu as donc 2 x 3 bonbons, ce qui fait 6 bonbons en tout.
+
+          Division (÷) :
+          Tu as 8 bonbons et tu veux les partager équitablement avec 3 amis (donc 4 enfants en tout).
+          Chaque enfant reçoit 8 ÷ 4 bonbons, ce qui fait 2 bonbons chacun.",
+  reward: 25,
   world: World.first,
   answers: ["21", "34", "67", "100", "18"],
-  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
+  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true&showInstructions=true",
   number: 3
 )
 level3.save!
@@ -70,11 +116,23 @@ level3.save!
 puts "--------------------------------level 4------------------------------------"
 
 level4 = Level.new(
-  validation: 18,
+  validation: "10",
+  title: "Les Boucles",
+  concept: "Imagine que tu veux dessiner 10 étoiles sur une feuille de papier.
+            Sans boucle :
+	            1.	Tu dessines une étoile.
+	            2.	Tu dessines une autre étoile.
+	            3.	Tu dessines encore une étoile.
+	            4.	Tu continues jusqu'à ce que tu aies dessiné 10 étoiles.
+            C'est un peu long et ennuyeux, non ?
+            Avec une boucle :
+	            1.	Tu dis à l'ordinateur : Dessine une étoile.
+	            2.	Ensuite, tu dis : Répète cette action 10 fois.
+            L'ordinateur va alors dessiner les 10 étoiles tout seul, sans que tu aies besoin de lui dire 10 fois.",
   reward: 30,
   world: World.first,
-  answers: ["21", "34", "67", "100", "18"],
-  url: "https://trinket.io/embed/blocks/9a88b4d5c6?hideGeneratedCode=true",
+  answers: ["10", "9", "19", "21", "50"],
+  url: "https://trinket.io/embed/blocks/c6759f273c?hideGeneratedCode=true&showInstructions=true",
   number: 4
 )
 level4.save!
