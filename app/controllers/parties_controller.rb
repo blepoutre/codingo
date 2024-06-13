@@ -11,6 +11,8 @@ class PartiesController < ApplicationController
   end
 
   def index
+    @characters = current_user.characters
+    @character = Character.find(@characters.first.id)
     @last_finished = 0
     @user_levels = current_user.user_levelings
     @user_levels.joins(:level).order(:number).each do |user_level|

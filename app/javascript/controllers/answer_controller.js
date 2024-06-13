@@ -7,11 +7,13 @@ export default class extends Controller {
   static targets=["reponse1", "reponse2", "reponse3", "reponse4", "reponse5", "win", "loose", "compteur"];
 
   static values={
-    validation: Number
+    validation: Number,
+    leveln: Number,
   };
 
     connect(){
       this.csrfTokent = (document.querySelector('meta[name=csrf-token]').content);
+      console.log(this.levelnValue);
     }
 
   check() {

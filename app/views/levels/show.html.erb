@@ -12,7 +12,7 @@
 
     <!-- Answer -->
     <div class="d-flex justify-content-center">
-      <fieldset id="fieldset" data-controller="answer" data-answer-validation-value="<%=@level.validation%>">
+      <fieldset id="fieldset" data-controller="answer" data-answer-validation-value="<%=@level.validation%>" data-answer-leveln-value="<%=@level.number%>">
           <%= render "success"%>
           <%= render "fail"%>
         <legend class="mb-2"><%= @level.question %></legend>

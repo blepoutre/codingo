@@ -3,12 +3,7 @@
           <div class="parties-body">
               <div style="height: 100%; width: 100%; position: relative;">
                 <%= link_to "Ma collection", collections_path(:user_id), class: "modalBtn green", style: "position: absolute; top: 0; left: 0; margin: 50px 50px;" %>
-                <% image_name = current_user.formatted_character_image_name %>
-                <% if image_name %>
-                  <%= image_tag image_name, height: "auto", width: "35%", class: "avatar-parties" %>
-                <% else %>
-                  Aucun personnage trouvé
-                <% end %>
+                <%= cl_image_tag(@character.photos[0].key, height: 360, class: 'd-block mx-auto') %>
                 <div class="statistics-window">
                   <%# <% is_current_user = urrent_user.present? %>
                   <p class="parties-username"> CodiCoins </p>
@@ -19,8 +14,8 @@
                   </div>
                 </div>
                 <div class="parties-character-sentence">
-                  <h5><%= @character&.nickname %></h5>
-                  <p><em>"<%= @character&.personality %>"</em></p>
+                  <h5><%= @character.nickname %></h5>
+                  <p><em>"<%= @character.personality %>"</em></p>
                 </div>
                 <div class="last-party" data-controller="playing-time end-level">
                   <p>Dernier niveau en cours : <%= "Niveau #{@current_level.number}" || '-' %></p>

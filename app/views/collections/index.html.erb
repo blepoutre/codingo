@@ -1,13 +1,36 @@
-
-
-    <div class="super-container">
-      <%= image_tag "Coffre.png", height: 800 %>
-      <%= cl_image_tag(@collections.first.photos[1].key, height: 130, style: "position: absolute; top: 80px; left: 200px; margin: 90px;") %>
-      <%= link_to "Retour à la carte", party_path(current_user), class:"btn btn-primary my-button", style: "position: absolute; top: 60px; left: 150px; margin: 50px;" %>
+<div class="modal fade show d-block mt-5" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-ku">
+    <div class="modal-content content-character">
+      <div class="modal-body body-character text-center">
+        <%# loop here on @characters %>
+        <div class="character">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                  <%  @collections.each_with_index do |character, index| %>
+                          <div class="carousel-item d-flex <%= index == 0 ? "active" : "" %>" >
+                            <div class="character-info">
+                              <h1 class="name-character"><%= character.nickname %></h1>
+                              <div class="personnality">
+                                <p> <i class="fa-solid fa-square-check"></i> <%= character.personality %></p>
+                              </div>
+                            </div>
+                            <div>
+                                <%= cl_image_tag(character.photos[1].key, height: 560, class: 'd-block mx-auto') %>
+                            </div>
+                          </div>
+                    <% end %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+        </div>
     </div>
-
- <ul>
-  <% @collections.each do |collection| %>
-    <li><%= collection.nickname %></li>
-  <% end %>
- </ul>
+    </div>
+  </div>
