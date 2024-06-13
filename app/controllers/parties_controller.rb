@@ -10,6 +10,17 @@ class PartiesController < ApplicationController
     @character = Character.find(params[:character_id])
   end
 
+  def index
+    @last_finished = 0
+    @user_levels = current_user.user_levelings
+    @user_levels.joins(:level).order(:number).each do |user_level|
+      if user_level.done || user_level.id == current_user.current_level.id
+        @last_finished = user_level
+      end
+    end
+    @current_level = Level.find(@last_finished.level_id)
+  end
+
   def create
     @character = Character.find(params[:character_id])
     @party = Party.new
