@@ -1,13 +1,33 @@
-<div class="background-2">
-    <div class="rampe">
-      <%= image_tag 'Rampe.png', class: "rampe-image" %>
+<div class="rampe">
+    <%= image_tag 'Rampe.png', class: "rampe-image" %>
       <% @user_levels.joins(:level).order(:number).each.with_index(1) do |user_level, index| %>
-       <div class="drapeau-<%= index %>">
+    <div class="drapeau-<%= index %>">
        <% if user_level.done || user_level.id == current_user.current_level.id%>
         <%= link_to "niveau #{index}", level_path(user_level.level) %>
       <% end %>
         <%= image_tag "Drapeau rouge.png", width: 120 , height: 120, class: "drapeau-position-#{index}" %>
       </div>
       <% end %>
-    </div>
 </div>
+<%= cl_image_tag(@character.photos[1].key, width: 260, height: 160, style: "object-fit: contain;", id: "board") %>
+
+  <script>
+    function triggerRide() {
+      const image = document.getElementById("board");
+      image.classList.add("animated");
+      if (image) {
+        setTimeout(() => {
+          image.classList.remove("animated");
+        }, 16000);
+      }
+    }
+
+    function startAnimation() {
+      // setInterval(triggerRide, 30000);
+      triggerRide();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      startAnimation();
+    });
+  </script>

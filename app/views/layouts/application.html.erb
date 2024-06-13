@@ -9,14 +9,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="body_target">
-    <% if current_page?(root_path) %>
+    <% if current_page?(root_path)%>
+      <body>
       <%= render "shared/navbar", red_background: false %>
-    <% else %>
+    <% elsif current_user && current_page?(party_path(current_user))%>
+      <body class="level-image">
       <%= render "shared/navbar", red_background: true %>
-      <% body_class = "body_target" %>
-      <% body_class += " body-background" if local_assigns[:body_background] %>
+    <% else %>
+    <body class="background-image">
+      <%= render "shared/navbar", red_background: true %>
     <% end %>
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
 </html>

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :collections,  dependent: :destroy
+  has_many :collections, dependent: :destroy
   has_many :parties, dependent: :destroy
   has_many :user_levelings, through: :parties, dependent: :destroy
 

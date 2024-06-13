@@ -4,18 +4,15 @@
       <div class="playmodal-body">
         <div class="d-flex flex-column align-middle justify-content-center">
           <h1>Perdu</h1>
-          <p>
-            <i class="fa-solid fa-star playstar"></i><i class="fa-regular fa-star playstar"></i><i class="fa-regular fa-star playstar"></i>
-          </p>
-            <h2> Tes gains : {monnaie du jeu} </h2>
+          <p>Même une machine doit faire des erreurs pour apprendre, qu'en est-il d'une personne ?</p>
         </div>
         <div class="playmodal-footer">
           <%= link_to "Réessayer", level_path(@level), class:"modalBtn", id: "retryBtn" %>
-          <%= link_to '`Niveau #{newlevel.id}`', "#", class:"modalBtn", id: "nxtBtn" %>
+          <%= link_to 'Retour à la partie', party_path(current_user), class:"modalBtn", id: "nxtBtn" %>
           <!-- ajouter <i class="fa-solid fa-play"></i> après le nextLevelNbr -->
         </div>
       </div>
-    <%= cl_image_tag("codingo_images/Leo_e9vbxi", alt: "modal-avatar", crop: :thumb, width: 300, height: 600, id: "playmodal-avatar") %>
+    <%= cl_image_tag(@character.photos[1].key, alt: "modal-avatar", crop: :thumb, height: 360, id: "playmodal-avatar") %>
     </div>
   </div>
 </div>

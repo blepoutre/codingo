@@ -1,0 +1,15 @@
+<div class="modal fade show d-block mt-5" id="createcharacter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="achat">
+  <div class="modal-dialog modal-ku">
+    <div class="modal-content content-character">
+      <div class="modal-body body-character text-center">
+        <div class="character">
+                      <div>
+                          <%= cl_image_tag(@character.photos[1].key, height: 360, class: 'd-block mx-auto') %>
+                      </div>
+                      <button type="button" class="button-new" data-action="click->achat#buy"> Acheter <%= @character.nickname %></button>
+                      <%= link_to "Retour à la boutique", characters_path, class:"button-new" %>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
