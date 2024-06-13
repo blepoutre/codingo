@@ -79,8 +79,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_183356) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.boolean "win", default: false
     t.integer "number_error", default: 0
+    t.boolean "win", default: false
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
